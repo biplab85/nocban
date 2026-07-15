@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+// ==========================================================================
+// CONTAINER & SECTIONS
+// ==========================================================================
+
+.container {
+  @include container(var(--container-lg));
+}
+.container--xl { @include container(var(--container-xl)); }
+.container--md { @include container(var(--container-md)); }
+.container--sm { @include container(var(--container-sm)); }
+
+.section {
+  @include section-space;
+
+  &--soft { background: var(--c-bg-soft); }
+  &--tint { background: var(--c-primary-tint); }
+  &--invert {
+    background: var(--c-bg-invert);
+    color: #fff;
+    h1, h2, h3, h4, p { color: #fff; }
+  }
+}
+
+.section__head {
+  max-width: 640px;
+  margin-bottom: var(--sp-10);
+
+  &--center { margin-inline: auto; text-align: center; }
+
+  .eyebrow { margin-bottom: var(--sp-3); }
+  h2 { margin-bottom: var(--sp-3); }
+  p { color: var(--c-ink-500); }
+}
+
+.section__head-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-10);
+
+  .section__head {
+    margin-bottom: 0;
+    max-width: 640px;
+    margin-inline: auto;
+
+    .eyebrow--icon { justify-content: center; }
+  }
+}

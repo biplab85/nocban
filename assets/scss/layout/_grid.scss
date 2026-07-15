@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+// ==========================================================================
+// GRID HELPERS
+// ==========================================================================
+
+.grid { display: grid; gap: var(--sp-6); }
+
+.grid-2 { grid-template-columns: 1fr; }
+.grid-3 { grid-template-columns: 1fr; }
+.grid-4 { grid-template-columns: 1fr; }
+
+@include respond(sm) {
+  .grid-2, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@include respond(md) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@include respond(lg) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}

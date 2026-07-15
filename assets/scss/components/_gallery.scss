@@ -1,0 +1,429 @@
+@use "../abstracts" as *;
+// ==========================================================================
+// GALLERY (Featured Moments) — Masonry layout → Fancybox lightbox
+// https://masonry.desandro.com/
+// ==========================================================================
+
+// Featured Moments section — abstract Olympic rings backdrop
+.moments {
+  position: relative;
+  overflow: hidden;
+
+  // Match the Featured Athletes / Latest News container width on desktop
+  .container { position: relative; z-index: 1; max-width: var(--container-xl); }
+
+  &__rings {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    width: 360px;
+    height: auto;
+    opacity: .06;
+
+    @include respond(lg) { width: 560px; }
+
+    &--a {
+      top: -90px;
+      left: -140px;
+      transform: rotate(-12deg);
+      animation: moments-drift-a 14s ease-in-out infinite;
+    }
+    &--b {
+      bottom: -120px;
+      right: -160px;
+      opacity: .05;
+      transform: rotate(8deg);
+      animation: moments-drift-b 18s ease-in-out infinite;
+    }
+  }
+
+  // abstract Olympic vector (rings + human figures) — top-right & bottom-left
+  &__abstract {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    width: 300px;
+    height: auto;
+    opacity: .12;
+
+    @include respond(lg) { width: 530px; }
+
+    &--tr {
+      top: -40px;
+      left: -60px;
+      animation: moments-drift-b 15s ease-in-out infinite;
+    }
+    &--bl {
+      bottom: -50px;
+      right: -70px;
+      opacity: .1;
+      animation: moments-drift-a 17s ease-in-out infinite;
+    }
+  }
+
+  // second abstract motif — laurel wreath (top-left + bottom-right)
+  &__laurel {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    width: 190px;
+    height: auto;
+    color: var(--c-primary);
+    opacity: .07;
+
+    @include respond(lg) { width: 300px; }
+
+    &--tl {
+      top: -50px;
+      left: -70px;
+      animation: moments-laurel-tl 16s ease-in-out infinite;
+    }
+    &--br {
+      bottom: -60px;
+      right: -70px;
+      color: var(--c-accent);
+      opacity: .08;
+      animation: moments-laurel-br 20s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes moments-laurel-tl {
+  0%, 100% { transform: rotate(-18deg) translate(0, 0); }
+  50%      { transform: rotate(-12deg) translate(-14px, 10px); }
+}
+@keyframes moments-laurel-br {
+  0%, 100% { transform: rotate(160deg) translate(0, 0); }
+  50%      { transform: rotate(166deg) translate(12px, -10px); }
+}
+
+@keyframes moments-drift-a {
+  0%, 100% { transform: rotate(-12deg) translate(0, 0); }
+  50%      { transform: rotate(-6deg) translate(-18px, 14px); }
+}
+@keyframes moments-drift-b {
+  0%, 100% { transform: rotate(8deg) translate(0, 0); }
+  50%      { transform: rotate(3deg) translate(16px, -14px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .moments__rings { animation: none !important; }
+}
+
+// ==========================================================================
+// MOMENTS — floating Olympic icons (decorative motion layer)
+// small svgs (flame, rings, medal, star, trophy, laurel, target, bolt)
+// gently drifting "here and there" behind the content
+// ==========================================================================
+.moments__icons {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.moments__icon {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  color: var(--c-accent);
+  opacity: .26;
+  will-change: transform;
+
+  svg { display: block; width: 100%; height: 100%; }
+
+  // each icon: unique spot, colour, size, drift path & tempo
+  &--flame  { top: 14%;    left: 4%;    width: 30px; height: 30px; color: var(--c-secondary); animation: mo-float-a 9s  ease-in-out infinite; }
+  &--rings  { top: 9%;     right: 5%;   width: 48px; height: 40px; color: var(--c-primary);   animation: mo-float-b 12s ease-in-out infinite; }
+  &--medal  { top: 45%;    left: 2.5%;  width: 34px; height: 34px; color: var(--c-accent);    animation: mo-float-c 10s ease-in-out infinite; }
+  &--star   { top: 52%;    right: 3%;   width: 26px; height: 26px; color: var(--c-accent);    animation: mo-float-d 8s  ease-in-out infinite; }
+  &--trophy { bottom: 10%; left: 5%;    width: 32px; height: 32px; color: var(--c-primary);   animation: mo-float-b 11s ease-in-out infinite; }
+  &--laurel { bottom: 8%;  right: 5%;   width: 42px; height: 42px; color: var(--c-primary);   animation: mo-float-a 13s ease-in-out infinite; }
+  &--target { top: 17%;    left: 31%;   width: 28px; height: 28px; color: var(--c-secondary); animation: mo-float-c 14s ease-in-out infinite; }
+  &--bolt   { top: 20%;    right: 30%;  width: 24px; height: 24px; color: var(--c-accent);    animation: mo-float-d 10s ease-in-out infinite; }
+}
+
+@keyframes mo-float-a {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(14px, -18px) rotate(8deg); }
+}
+@keyframes mo-float-b {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(-16px, -14px) rotate(-10deg); }
+}
+@keyframes mo-float-c {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33%      { transform: translate(11px, 13px) rotate(6deg); }
+  66%      { transform: translate(-11px, -9px) rotate(-6deg); }
+}
+@keyframes mo-float-d {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(-12px, 16px) rotate(12deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .moments__icon { animation: none !important; }
+}
+
+.gallery {
+  // fade in once Masonry has positioned the items (avoids a flash of stacked imgs)
+  opacity: 0;
+  transition: opacity var(--t-base) var(--ease-standard);
+  &.is-ready { opacity: 1; }
+
+  // 2 columns (mobile)
+  &__sizer,
+  &__item { width: 48.5%; }
+  &__gutter { width: 3%; }
+
+  @include respond(md) {
+    // 3 columns
+    &__sizer,
+    &__item { width: 31.8%; }
+    &__gutter { width: 2.3%; }
+  }
+
+  &__item {
+    display: block;
+    position: relative;
+    margin-bottom: var(--sp-4);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    background: var(--c-bg-muted);
+    border: 1px solid var(--c-line-soft);
+    box-shadow: var(--sh-sm);
+    cursor: pointer;
+    transition: box-shadow var(--t-base) var(--ease-out), border-color var(--t-base);
+
+    @include respond(md) { margin-bottom: var(--sp-5); }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;               // natural aspect → true masonry packing
+      transition: transform var(--t-slow) var(--ease-out), filter var(--t-base);
+    }
+
+    // premium gradient veil that deepens on hover
+    &::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(15,26,23,.78) 0%, rgba(15,26,23,.18) 45%, transparent 72%);
+      opacity: 0;
+      transition: opacity var(--t-base);
+    }
+
+    &:hover {
+      box-shadow: var(--sh-lg);
+      border-color: var(--c-line);
+      img { transform: scale(1.07); filter: saturate(1.05); }
+      &::after { opacity: 1; }
+    }
+
+    // caption slides up on hover with an accent tag
+    &__cap {
+      position: absolute;
+      left: var(--sp-5); right: var(--sp-5); bottom: var(--sp-5);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+      color: #fff;
+      font-family: var(--ff-heading);
+      font-size: 0.98rem;
+      font-weight: 600;
+      line-height: 1.3;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
+    }
+    &:hover &__cap { opacity: 1; transform: translateY(0); }
+
+    &__tag {
+      align-self: flex-start;
+      font-family: var(--ff-body);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-ink-900);
+      background: var(--c-accent);
+      padding: 3px 9px;
+      border-radius: var(--r-full);
+    }
+
+    // centred zoom button
+    &__icon {
+      position: absolute;
+      top: 50%; left: 50%;
+      z-index: 3;
+      width: 52px; height: 52px;
+      display: grid; place-items: center;
+      border-radius: var(--r-full);
+      background: rgba(255,255,255,.95);
+      color: var(--c-primary);
+      box-shadow: var(--sh-md);
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(.7);
+      transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
+    }
+    &:hover &__icon { opacity: 1; transform: translate(-50%, -60%) scale(1); }
+  }
+}
+
+// ==========================================================================
+// MGAL — Featured Moments as 3 collection cards → grouped Fancybox
+// (redesign of the gallery section; each card opens only its own collection)
+// ==========================================================================
+.mgal {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+
+  @include respond(sm)  { grid-template-columns: repeat(2, 1fr); }
+  @include respond(lg)  { grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); }
+
+  // hidden source anchors — only feed Fancybox groups, never shown
+  &__src { display: none !important; }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    background: var(--c-bg);
+    border: 1px solid var(--c-line-soft);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    box-shadow: var(--sh-sm);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--t-base) var(--ease-out),
+                box-shadow var(--t-base) var(--ease-out),
+                border-color var(--t-base);
+    will-change: transform;
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-6px);
+      box-shadow: var(--sh-lg);
+      border-color: var(--c-line);
+    }
+    &:focus-visible { outline: none; box-shadow: var(--sh-focus), var(--sh-lg); }
+  }
+
+  &__media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--c-bg-muted);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--t-slow) var(--ease-out), filter var(--t-base);
+    }
+
+    // gradient veil deepening on hover
+    &::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(15,26,23,.55) 0%, rgba(15,26,23,.12) 42%, transparent 70%);
+      opacity: .65;
+      transition: opacity var(--t-base);
+    }
+  }
+  &__card:hover &__media img,
+  &__card:focus-visible &__media img { transform: scale(1.07); filter: saturate(1.05); }
+  &__card:hover &__media::after,
+  &__card:focus-visible &__media::after { opacity: 1; }
+
+  // image-count pill (top-left)
+  &__badge {
+    position: absolute;
+    top: var(--sp-3); left: var(--sp-3);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 11px;
+    font-family: var(--ff-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--c-ink-900);
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(4px);
+    border-radius: var(--r-full);
+    box-shadow: var(--sh-xs);
+
+    svg { color: var(--c-primary); }
+  }
+
+  // centred zoom affordance
+  &__zoom {
+    position: absolute;
+    top: 50%; left: 50%;
+    z-index: 2;
+    width: 54px; height: 54px;
+    display: grid; place-items: center;
+    border-radius: var(--r-full);
+    background: rgba(255,255,255,.95);
+    color: var(--c-primary);
+    box-shadow: var(--sh-md);
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(.7);
+    transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
+  }
+  &__card:hover &__zoom,
+  &__card:focus-visible &__zoom { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    padding: var(--sp-5) var(--sp-5) var(--sp-6);
+  }
+
+  &__eyebrow {
+    font-family: var(--ff-body);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--c-secondary);
+  }
+
+  &__title {
+    margin: 0;
+    font-family: var(--ff-heading);
+    font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--c-ink-900);
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: var(--sp-1);
+    font-family: var(--ff-body);
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--c-primary);
+
+    svg { transition: transform var(--t-base) var(--ease-out); }
+  }
+  &__card:hover &__cta svg,
+  &__card:focus-visible &__cta svg { transform: translateX(4px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__card,
+    &__media img,
+    &__zoom,
+    &__cta svg { transition: none; }
+    &__card:hover { transform: none; }
+    &__card:hover &__media img { transform: none; }
+  }
+}

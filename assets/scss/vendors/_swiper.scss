@@ -1,0 +1,10 @@
+// ==========================================================================
+// SWIPER overrides (loaded after swiper base CSS from CDN/vendor)
+// ==========================================================================
+
+:root {
+  --swiper-theme-color: var(--c-primary);
+  --swiper-pagination-color: var(--c-primary);
+}
+
+.swiper-button-next, .swiper-button-prev { display: none; } // we use custom .slider-nav

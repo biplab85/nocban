@@ -1,0 +1,116 @@
+// ==========================================================================
+// DESIGN TOKENS  —  single source of truth (mirrors claude.md §3 & §4)
+// Exposed as CSS custom properties on :root for runtime use.
+// ==========================================================================
+
+:root {
+  // ---- Brand ----
+  --c-primary: #006A4E;
+  --c-primary-dark: #00543E;
+  --c-primary-tint: #E6F1EE;
+  --c-secondary: #F42A41;
+  --c-secondary-dark: #C81E32;
+  --c-accent: #0081C8;          // Olympic blue
+  --c-accent-soft: #D6EAF7;     // light blue tint
+  --c-accent-on-dark: #6FC3EA;  // brighter blue for accent text/icons on green/dark panels
+
+  // ---- Semantic / status ----
+  --c-success: #1E9E5A;
+  --c-warning: #E8A200;
+  --c-error: #D93025;
+  --c-info: #2B6CB0;
+
+  // ---- Neutrals ----
+  --c-ink-900: #0F1A17;
+  --c-ink-700: #334039;
+  --c-ink-500: #5B6B63;
+  --c-ink-300: #9AA7A0;
+  --c-line: #E2E8E4;
+  --c-line-soft: #EEF2F0;
+
+  // ---- Backgrounds ----
+  --c-bg: #FFFFFF;
+  --c-bg-soft: #F7F9F8;
+  --c-bg-muted: #F0F4F2;
+  --c-bg-invert: #0F1A17;
+
+  // ---- Typography ----
+  // Display/headings use the EXPANDED width axis (athletic, institutional signage feel);
+  // body uses the normal-width sibling — one superfamily, two personalities.
+  // "Noto Sans Bengali" appended so real Bengali content from nocban.org renders correctly.
+  --ff-display: "Archivo Expanded", "Archivo", "Noto Sans Bengali", "Segoe UI", system-ui, sans-serif;
+  --ff-heading: "Archivo Expanded", "Archivo", "Noto Sans Bengali", "Segoe UI", system-ui, sans-serif;
+  --ff-body: "Archivo", "Noto Sans Bengali", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --fs-display: clamp(2.5rem, 6vw, 5rem);
+  --fs-h1: clamp(2rem, 4.5vw, 3.5rem);
+  --fs-h2: clamp(1.6rem, 3.5vw, 2.5rem);
+  --fs-h3: clamp(1.25rem, 2.5vw, 1.75rem);
+  --fs-h4: clamp(1.1rem, 2vw, 1.375rem);
+  --fs-body-lg: 1.125rem;
+  --fs-body: 1rem;
+  --fs-body-sm: 0.875rem;
+  --fs-caption: 0.75rem;
+
+  // ---- Radius ----
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-full: 999px;
+
+  // ---- Shadows ----
+  --sh-xs: 0 1px 2px rgba(15, 26, 23, .06);
+  --sh-sm: 0 2px 8px rgba(15, 26, 23, .08);
+  --sh-md: 0 8px 24px rgba(15, 26, 23, .10);
+  --sh-lg: 0 16px 40px rgba(15, 26, 23, .12);
+  --sh-focus: 0 0 0 3px rgba(0, 106, 78, .35);
+
+  // ---- Spacing (4px base) ----
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+  --sp-32: 128px;
+
+  // ---- Containers ----
+  --container-xl: 1440px;
+  --container-lg: 1140px;
+  --container-md: 960px;
+  --container-sm: 720px;
+  --gutter: 20px;
+
+  // ---- Icon sizes ----
+  --ic-sm: 16px;
+  --ic-md: 20px;
+  --ic-lg: 24px;
+  --ic-xl: 32px;
+
+  // ---- Z-index ----
+  --z-dropdown: 100;
+  --z-header: 200;
+  --z-appbar: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+
+  // ---- Motion ----
+  --t-fast: 150ms;
+  --t-base: 300ms;
+  --t-slow: 500ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 1024px) {
+  :root { --gutter: 40px; }
+}

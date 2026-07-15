@@ -1,0 +1,106 @@
+@use "../abstracts" as *;
+// ==========================================================================
+// BUTTONS  —  claude.md §5.1
+// ==========================================================================
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--ff-body);
+  font-weight: 600;
+  font-size: var(--fs-body-sm);
+  line-height: 1.2;
+  padding: 12px 22px;
+  border-radius: var(--r-sm);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform var(--t-fast) var(--ease-standard),
+              background var(--t-fast) var(--ease-standard),
+              box-shadow var(--t-fast) var(--ease-standard),
+              color var(--t-fast) var(--ease-standard);
+
+  &:hover { transform: translateY(-2px); }
+  &:active { transform: translateY(0); }
+  &:focus-visible { @include focus-ring; }
+  &[disabled], &.is-disabled { opacity: .55; pointer-events: none; }
+
+  svg { width: var(--ic-md); height: var(--ic-md); }
+
+  // ---- Variants ----
+  &--primary {
+    background: var(--c-primary);
+    color: #fff;
+    box-shadow: var(--sh-sm);
+    &:hover { background: var(--c-primary-dark); box-shadow: var(--sh-md); }
+  }
+  &--secondary {
+    background: var(--c-secondary);
+    color: #fff;
+    &:hover { background: var(--c-secondary-dark); box-shadow: var(--sh-md); }
+  }
+  &--accent {
+    background: var(--c-accent);
+    color: var(--c-ink-900);
+    &:hover { filter: brightness(.96); box-shadow: var(--sh-md); }
+  }
+  &--outline {
+    background: transparent;
+    border-color: var(--c-line);
+    color: var(--c-ink-900);
+    &:hover { border-color: var(--c-primary); color: var(--c-primary); }
+  }
+  &--ghost {
+    background: transparent;
+    color: var(--c-primary);
+    &:hover { background: var(--c-primary-tint); }
+  }
+  &--on-dark {
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+    border-color: rgba(255, 255, 255, .28);
+    &:hover { background: #fff; color: var(--c-ink-900); }
+  }
+
+  // ---- Premium sweep-fill hover (green fills from the left) ----
+  &--sweep {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    .btn__arrow { transition: transform var(--t-base) var(--ease-out); }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: var(--c-primary);
+      transform: translateX(-101%);
+      transition: transform var(--t-base) var(--ease-out);
+    }
+
+    &:hover {
+      color: #fff;
+      border-color: var(--c-primary);
+      transform: translateY(0);
+      &::before { transform: translateX(0); }
+      .btn__arrow { transform: translateX(5px); }
+    }
+  }
+
+  // keep icon + label inline when a button also uses .hide-mobile
+  // (the utility otherwise forces display:block, stacking the SVG above the text)
+  &.hide-mobile {
+    display: none;
+    @include respond(lg) { display: inline-flex; }
+  }
+
+  // ---- Sizes ----
+  &--sm { padding: 8px 16px; font-size: var(--fs-caption); }
+  &--lg { padding: 16px 30px; font-size: var(--fs-body); }
+  &--icon { padding: 0; width: 44px; height: 44px; border-radius: var(--r-full); }
+  &--block { width: 100%; }
+}

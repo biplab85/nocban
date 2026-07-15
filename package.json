@@ -1,0 +1,37 @@
+{
+  "name": "nocban-redesign",
+  "version": "1.0.0",
+  "description": "Bangladesh Olympic Association (NOCBAN) website redesign — premium, mobile-first Olympic experience.",
+  "type": "module",
+  "scripts": {
+    "sass:dev": "sass --watch --style=expanded --source-map assets/scss/main.scss:assets/css/main.css",
+    "sass:build": "sass --style=expanded --no-source-map assets/scss/main.scss:assets/css/main.css",
+    "css:prefix": "postcss assets/css/main.css --use autoprefixer -o assets/css/main.css --no-map",
+    "css:min": "sass --style=compressed --no-source-map assets/scss/main.scss:assets/css/main.min.css && postcss assets/css/main.min.css --use autoprefixer -o assets/css/main.min.css --no-map",
+    "build:css": "npm run sass:build && npm run css:prefix && npm run css:min",
+    "dev": "npm run sass:dev",
+    "build": "npm run build:css"
+  },
+  "keywords": [
+    "nocban",
+    "olympic",
+    "bangladesh",
+    "scss",
+    "gsap",
+    "swiper",
+    "fancybox"
+  ],
+  "author": "Sklentr",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.77.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
+}

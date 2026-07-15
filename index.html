@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#006A4E" />
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Bangladesh Olympic Association</title>
+  <meta name="description" content="Official website of the Bangladesh Olympic Association (NOCBAN). News, events, athletes, activities and the Olympic journey of Team Bangladesh." />
+
+  <!-- Favicon (BOA mark, sourced from nocban.org) -->
+  <link rel="icon" href="assets/images/logo/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="assets/images/logo/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Expanded:wght@600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css" />
+  <link rel="stylesheet" href="assets/css/main.css?v=64" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- 1. HEADER -->
+  <header class="header" id="top">
+    <div class="header__inner">
+      <a class="header__logo" href="index.html" aria-label="Bangladesh Olympic Association home">
+        <img src="assets/images/logo/logo.png" alt="Bangladesh Olympic Association" />
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link is-active" href="index.html">Home</a>
+        <div class="nav__item">
+          <button class="nav__link nav__toggle" aria-haspopup="true" aria-expanded="false">About BOA <svg class="nav__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav__dropdown nav__dropdown--mega">
+            <a href="https://nocban.org/about/history">History &amp; Mission-Vision</a>
+            <a href="https://nocban.org/about/executive-committee">Executive Committee</a>
+            <a href="https://nocban.org/about/general-assembly">General Assembly</a>
+            <a href="https://nocban.org/about/previous-officials">Previous Presidents &amp; Secretary Generals</a>
+            <a href="https://nocban.org/about/organogram">Organogram &amp; Administration</a>
+            <a href="https://nocban.org/about/commissions">Commissions and Sub-Committees</a>
+            <a href="https://nocban.org/about/noa">National Olympic Academy</a>
+            <a href="https://nocban.org/about/anti-doping">Anti-Doping</a>
+            <a href="https://nocban.org/about/statute">BOA Statute</a>
+            <a href="https://nocban.org/about/affiliated-organizations">Affiliated Organizations</a>
+            <a href="https://nocban.org/about/sports-awards">Sports Awards</a>
+            <a href="https://nocban.org/documents-reports">Documents and Annual Reports</a>
+          </div>
+        </div>
+        <a class="nav__link" href="https://nocban.org/activities">Activities</a>
+        <div class="nav__item">
+          <button class="nav__link nav__toggle" aria-haspopup="true" aria-expanded="false">Games &amp; Results <svg class="nav__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav__dropdown">
+            <a href="https://nocban.org/games/national">National</a>
+            <a href="https://nocban.org/games/international">International</a>
+          </div>
+        </div>
+        <a class="nav__link" href="https://nocban.org/election">BOA Election</a>
+        <a class="nav__link" href="https://nocban.org/about/anti-doping">Anti-Doping</a>
+        <a class="nav__link" href="https://nocban.org/page/Bangladesh-Olympic-Association-library-and-museum">BOA Library and Museum</a>
+        <a class="nav__link" href="https://nocban.org/contact">Contact Us</a>
+      </nav>
+      <div class="header__actions">
+        <a class="btn btn--primary btn--sm hide-mobile" href="#engage"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>Stay Updated</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer">
+    <div class="drawer__backdrop"></div>
+    <div class="drawer__panel" role="dialog" aria-label="Menu">
+      <nav class="drawer-nav" aria-label="Mobile">
+        <a class="drawer-nav__link is-active" href="index.html">Home</a>
+        <div class="drawer-nav__group">
+          <button class="drawer-nav__link drawer-nav__toggle" aria-expanded="false">About BOA <svg class="nav__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="drawer-nav__sub"><div class="drawer-nav__sub-inner">
+            <a class="drawer-nav__sublink" href="https://nocban.org/about/history">History &amp; Mission-Vision</a>
+            <a class="drawer-nav__sublink" href="https://nocban.org/about/executive-committee">Executive Committee</a>
+            <a class="drawer-nav__sublink" href="https://nocban.org/about/general-assembly">General Assembly</a>
+            <a class="drawer-nav__sublink" href="https://nocban.org/about/previous-officials">Previous Presidents &amp; Secretary Generals</a>
+            <a class="drawer-nav__sublink" href="https://nocban.org/about/organogram">Organogram &amp; Administration</a>
+            <a class="drawer-nav__sublink" href="https://nocban.org/about/commissions">Commissions and Sub-Committees</a>
+            <a class="drawer-nav__sublink" href="https://nocban.org/about/noa">National Olympic Academy</a>
+            <a class="drawer-nav__sublink" href="https://nocban.org/about/anti-doping">Anti-Doping</a>
+            <a class="drawer-nav__sublink" href="https://nocban.org/about/statute">BOA Statute</a>
+            <a class="drawer-nav__sublink" href="https://nocban.org/about/affiliated-organizations">Affiliated Organizations</a>
+            <a class="drawer-nav__sublink" href="https://nocban.org/about/sports-awards">Sports Awards</a>
+            <a class="drawer-nav__sublink" href="https://nocban.org/documents-reports">Documents and Annual Reports</a>
+          </div></div>
+        </div>
+        <a class="drawer-nav__link" href="https://nocban.org/activities">Activities</a>
+        <div class="drawer-nav__group">
+          <button class="drawer-nav__link drawer-nav__toggle" aria-expanded="false">Games &amp; Results <svg class="nav__chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="drawer-nav__sub"><div class="drawer-nav__sub-inner">
+            <a class="drawer-nav__sublink" href="https://nocban.org/games/national">National</a>
+            <a class="drawer-nav__sublink" href="https://nocban.org/games/international">International</a>
+          </div></div>
+        </div>
+        <a class="drawer-nav__link" href="https://nocban.org/election">BOA Election</a>
+        <a class="drawer-nav__link" href="https://nocban.org/about/anti-doping">Anti-Doping</a>
+        <a class="drawer-nav__link" href="https://nocban.org/page/Bangladesh-Olympic-Association-library-and-museum">BOA Library and Museum</a>
+        <a class="drawer-nav__link" href="https://nocban.org/contact">Contact Us</a>
+      </nav>
+      <a class="btn btn--primary btn--block drawer-nav__cta" href="#engage"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>Stay Updated</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- 2. HERO -->
+    <section class="hero" aria-label="Featured activities">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="hero__slide hero__slide--bottom">
+              <div class="hero__bg"><img src="assets/images/hero/bfdb5162ed4f24eb6a516b006fecd8a576cca8a5.jpeg" alt="ত্রিশাল সামরিক প্রশিক্ষণ এলাকা, ময়মনসিংহে বাংলাদেশ অলিম্পিক এসোসিয়েশন এবং বাংলাদেশ সেনাবাহিনীর যৌথ উদ্যোগে নির্মিতব্য 'বাংলাদেশ অলিম্পিক কমপ্লেক্স' এর ভিত্তিপ্রস্তর স্থাপন"  /></div>
+              <div class="hero__inner">
+                <div class="hero__content">
+                  <span class="eyebrow eyebrow--icon eyebrow--on-dark hero__eyebrow" data-hero><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.5 3.5 5 5.8 5 9.5A5 5 0 0 1 7 12c0-1.3.5-2.4 1.4-3.3.2 1 .9 1.8 1.6 2.1-.3-2.6.6-5.6 2-8.8z"/></svg><span>Established 1979 · IOC Recognised</span></span>
+                  <h1 class="hero__title hero__title--bn" data-hero>ত্রিশাল সামরিক প্রশিক্ষণ এলাকা, ময়মনসিংহে বাংলাদেশ অলিম্পিক এসোসিয়েশন এবং বাংলাদেশ সেনাবাহিনীর যৌথ উদ্যোগে নির্মিতব্য 'বাংলাদেশ অলিম্পিক কমপ্লেক্স' এর ভিত্তিপ্রস্তর স্থাপন</h1>
+                  <div class="hero__actions" data-hero>
+                    <a class="btn btn--accent btn--lg" href="#activities"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2.5 7 5-14 2.5 7H21"/></svg>View Activities</a>
+                    <a class="btn btn--on-dark btn--lg" href="#about"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Our Legacy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero__slide">
+              <div class="hero__bg"><img src="assets/images/gellary/3f9567cf9ea943c31528e6be12e0aa3f4769d4a3.JPG" alt="King's Baton Relay of 23rd Commonwealth Games, Glasgow 2026" loading="lazy" /></div>
+              <div class="hero__inner">
+                <div class="hero__content">
+                  <span class="eyebrow eyebrow--icon eyebrow--on-dark hero__eyebrow" ><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.5 3.5 5 5.8 5 9.5A5 5 0 0 1 7 12c0-1.3.5-2.4 1.4-3.3.2 1 .9 1.8 1.6 2.1-.3-2.6.6-5.6 2-8.8z"/></svg><span>Established 1979 · IOC Recognised</span></span>
+                  <h1 class="hero__title" >King's Baton Relay of 23rd Commonwealth Games, Glasgow 2026</h1>
+                  <div class="hero__actions" >
+                    <a class="btn btn--accent btn--lg" href="#activities"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2.5 7 5-14 2.5 7H21"/></svg>View Activities</a>
+                    <a class="btn btn--on-dark btn--lg" href="#about"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Our Legacy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero__slide hero__slide--pushtop">
+              <div class="hero__bg"><img src="assets/images/hero/d442555dd5b66fc102937d39c2e4850907468294.jpg" alt="Technical Course for Coaches in Golf" loading="lazy" /></div>
+              <div class="hero__inner">
+                <div class="hero__content">
+                  <span class="eyebrow eyebrow--icon eyebrow--on-dark hero__eyebrow" ><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.5 3.5 5 5.8 5 9.5A5 5 0 0 1 7 12c0-1.3.5-2.4 1.4-3.3.2 1 .9 1.8 1.6 2.1-.3-2.6.6-5.6 2-8.8z"/></svg><span>Established 1979 · IOC Recognised</span></span>
+                  <h1 class="hero__title" >Technical Course for Coaches in Golf</h1>
+                  <div class="hero__actions" >
+                    <a class="btn btn--accent btn--lg" href="#activities"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2.5 7 5-14 2.5 7H21"/></svg>View Activities</a>
+                    <a class="btn btn--on-dark btn--lg" href="#about"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Our Legacy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__pagination"></div>
+      <span class="hero__scroll-cue">Scroll ↓</span>
+    </section>
+
+    <!-- 3. NEWS STRIP -->
+    <div class="news-strip" aria-label="Latest headlines">
+      <div class="container container--xl">
+        <div class="news-strip__bar">
+          <div class="news-strip__viewport">
+            <div class="news-strip__track">
+              <a class="news-strip__item" href="#news">Athlete365 Career+ Workshop</a>
+          <a class="news-strip__item" href="#news">প্রেস বিজ্ঞপ্তি - অলিম্পিক ডে ২০২৬</a>
+          <a class="news-strip__item" href="#news">২০তম এশিয়ান গেমস উপলক্ষে ফান রান অনুষ্ঠান আয়োজন</a>
+          <a class="news-strip__item" href="#news">শোকবার্তা - জনাব জাকি আহমেদ</a>
+          <a class="news-strip__item" href="#news">ত্রিশাল সামরিক প্রশিক্ষণ এলাকা, ময়মনসিংহে বাংলাদেশ অলিম্পিক এসোসিয়েশন এবং বাংলাদেশ সেনাবাহিনীর যৌথ উদ্যোগে নির্মিতব্য 'বাংলাদেশ অলিম্পিক কমপ্লেক্স' এর ভিত্তিপ্রস্তর স্থাপন</a>
+          <a class="news-strip__item" href="#news">আর্ন্তজাতিক অলিম্পিক কমিটির অলিম্পিক সলিডারিটির পৃষ্ঠপোষকতায় বাংলাদেশ অলিম্পিক এসোসিয়েশন কর্তৃক আয়োজন করা হলো 'Sport Administrators Course' শীর্ষক প্রশিক্ষণ প্রোগ্রাম</a>
+          <a class="news-strip__item" href="#news">২৩তম কমনওয়েলথ গেমস ব্যাটন রীলে</a>
+          <a class="news-strip__item" href="#news">৩য় এশিয়ান ইয়ুথ গেমস এবং ৬ষ্ঠ ইসলামিক সলিডারিটি গেমসে পদকপ্রাপ্ত খেলোয়াড়দের সংবর্ধনা এবং অর্থ পুরস্কার প্রদান</a>
+          <a class="news-strip__item" href="#news">বিওএ’র সাধারণ পরিষদের ৬ষ্ঠ সভা এবং বিওএ’র কার্যনির্বাহী কমিটির নির্বাচন (২০২৫-২০২৯)</a>
+              <a class="news-strip__item" href="#news" aria-hidden="true">Athlete365 Career+ Workshop</a>
+          <a class="news-strip__item" href="#news" aria-hidden="true">প্রেস বিজ্ঞপ্তি - অলিম্পিক ডে ২০২৬</a>
+          <a class="news-strip__item" href="#news" aria-hidden="true">২০তম এশিয়ান গেমস উপলক্ষে ফান রান অনুষ্ঠান আয়োজন</a>
+          <a class="news-strip__item" href="#news" aria-hidden="true">শোকবার্তা - জনাব জাকি আহমেদ</a>
+          <a class="news-strip__item" href="#news" aria-hidden="true">ত্রিশাল সামরিক প্রশিক্ষণ এলাকা, ময়মনসিংহে বাংলাদেশ অলিম্পিক এসোসিয়েশন এবং বাংলাদেশ সেনাবাহিনীর যৌথ উদ্যোগে নির্মিতব্য 'বাংলাদেশ অলিম্পিক কমপ্লেক্স' এর ভিত্তিপ্রস্তর স্থাপন</a>
+          <a class="news-strip__item" href="#news" aria-hidden="true">আর্ন্তজাতিক অলিম্পিক কমিটির অলিম্পিক সলিডারিটির পৃষ্ঠপোষকতায় বাংলাদেশ অলিম্পিক এসোসিয়েশন কর্তৃক আয়োজন করা হলো 'Sport Administrators Course' শীর্ষক প্রশিক্ষণ প্রোগ্রাম</a>
+          <a class="news-strip__item" href="#news" aria-hidden="true">২৩তম কমনওয়েলথ গেমস ব্যাটন রীলে</a>
+          <a class="news-strip__item" href="#news" aria-hidden="true">৩য় এশিয়ান ইয়ুথ গেমস এবং ৬ষ্ঠ ইসলামিক সলিডারিটি গেমসে পদকপ্রাপ্ত খেলোয়াড়দের সংবর্ধনা এবং অর্থ পুরস্কার প্রদান</a>
+          <a class="news-strip__item" href="#news" aria-hidden="true">বিওএ’র সাধারণ পরিষদের ৬ষ্ঠ সভা এবং বিওএ’র কার্যনির্বাহী কমিটির নির্বাচন (২০২৫-২০২৯)</a>
+            </div>
+          </div>
+          <button class="news-strip__toggle" type="button" aria-label="Pause news ticker" aria-pressed="false">
+            <svg class="news-strip__ic news-strip__ic--pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+            <svg class="news-strip__ic news-strip__ic--play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <a class="news-strip__label" href="#news"><span>View all</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ABOUT US -->
+    <section class="section has-grain" id="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__media" data-reveal>
+            <div class="about__frame">
+              <img src="assets/images/about/olympic_building.jpg" alt="Olympic Bhaban, Dhaka" loading="lazy" />
+              <span class="about__shine" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="about__content" data-reveal-group>
+            <div class="about__meta" data-reveal><span class="eyebrow eyebrow--icon"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Our History</span></span><span class="about__since">Est. 1979</span></div>
+            <h2 data-reveal>A Legacy of Excellence</h2>
+            <p class="lead" data-reveal>The Bangladesh Olympic Association was established in 1979, following the country's recognition by the International Olympic Committee. Since its inception, BOA has been dedicated to promoting Olympic values and developing sports across the nation.</p>
+            <p data-reveal>Over the past four decades, we have nurtured countless athletes who have represented Bangladesh with pride on regional and international stages. Our commitment to excellence, sportsmanship, and national development through athletics remains unwavering.</p>
+            <a class="btn btn--outline btn--sweep about__cta mt-8" href="#about" data-reveal><span>Read Our Full History</span><svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. UPCOMING EVENTS -->
+    <section class="section events" id="events">
+      <div class="container">
+        <div class="section__head-row">
+          <div class="section__head">
+            <span class="eyebrow eyebrow--icon"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg><span>On the Calendar</span></span>
+            <h2>Upcoming Events</h2>
+            <p>Upcoming Regional, National &amp; International Game Events</p>
+          </div>
+        </div>
+        <div class="events__layout" data-reveal-group>
+          
+        <div class="event-feature" data-reveal>
+          <div class="event-feature__body">
+            <span class="event-feature__logo"><img src="assets/images/events/0d74a6fb9afb160a4845bee80393f415dab5c233.svg" alt="23rd Commonwealth Games, Glasgow 2026" /></span>
+            <div class="event-feature__top">
+              <div>
+                <span class="badge badge--live">Next Up</span>
+                <h3 class="event-feature__title">23rd Commonwealth Games, Glasgow 2026</h3>
+                <div class="event-feature__meta">
+                  <span>📍 Glasgow, Scotland</span>
+                  <span>🗓 23 JUL – 02 AUG 2026</span>
+                </div>
+              </div>
+            </div>
+            <div class="event-feature__countdown">
+              <div class="countdown" data-countdown="2026-07-23T00:00:00" role="timer" aria-label="Countdown to event">
+                <div class="countdown__unit"><span class="countdown__num" data-cd="days">00</span><span class="countdown__lbl">Days</span></div>
+                <div class="countdown__sep">:</div>
+                <div class="countdown__unit"><span class="countdown__num" data-cd="hours">00</span><span class="countdown__lbl">Hrs</span></div>
+                <div class="countdown__sep">:</div>
+                <div class="countdown__unit"><span class="countdown__num" data-cd="mins">00</span><span class="countdown__lbl">Min</span></div>
+                <div class="countdown__sep">:</div>
+                <div class="countdown__unit"><span class="countdown__num" data-cd="secs">00</span><span class="countdown__lbl">Sec</span></div>
+              </div></div>
+            <a class="btn btn--accent" href="https://www.glasgow2026.com/" target="_blank" rel="noopener">Official Website →</a>
+          </div>
+          <span class="ring-motif ring-motif--tr" aria-hidden="true"></span>
+          <span class="ring-motif ring-motif--bl" aria-hidden="true"></span>
+        </div>
+          <div class="events__list">
+          <div class="event-card" data-reveal>
+            <span class="event-card__logo"><img src="assets/images/events/f6fb00165615c5cf21339955467f0c259a2455bf.jpg" alt="20th Asian Games, Aichi Nagoya 2026" loading="lazy" /></span>
+            <div class="event-card__head">
+              
+              <div class="event-card__body">
+                <h3 class="event-card__title">20th Asian Games, Aichi Nagoya 2026</h3>
+                <div class="event-card__meta"><span>📍 Aichi-Nagoya, Japan</span><span>🗓 19 SEP – 04 OCT 2026</span></div>
+              </div>
+            </div>
+            
+              <div class="countdown countdown--mini" data-countdown="2026-09-19T00:00:00" role="timer" aria-label="Countdown to event">
+                <div class="countdown__unit"><span class="countdown__num" data-cd="days">00</span><span class="countdown__lbl">Days</span></div>
+                <div class="countdown__sep">:</div>
+                <div class="countdown__unit"><span class="countdown__num" data-cd="hours">00</span><span class="countdown__lbl">Hrs</span></div>
+                <div class="countdown__sep">:</div>
+                <div class="countdown__unit"><span class="countdown__num" data-cd="mins">00</span><span class="countdown__lbl">Min</span></div>
+                <div class="countdown__sep">:</div>
+                <div class="countdown__unit"><span class="countdown__num" data-cd="secs">00</span><span class="countdown__lbl">Sec</span></div>
+              </div>
+            <a class="event-card__link link" href="https://www.aichi-nagoya2026.org/en/" target="_blank" rel="noopener">Official website →</a>
+          </div>
+          <div class="event-card" data-reveal>
+            <span class="event-card__logo"><img src="assets/images/events/c3af725ed0a5f8f27541658bb484b1f791cb628e.png" alt="4th Youth Olympic Games, Dakar 2026" loading="lazy" /></span>
+            <div class="event-card__head">
+              
+              <div class="event-card__body">
+                <h3 class="event-card__title">4th Youth Olympic Games, Dakar 2026</h3>
+                <div class="event-card__meta"><span>📍 Dakar, Senegal</span><span>🗓 31 OCT – 13 NOV 2026</span></div>
+              </div>
+            </div>
+            
+              <div class="countdown countdown--mini" data-countdown="2026-10-31T00:00:00" role="timer" aria-label="Countdown to event">
+                <div class="countdown__unit"><span class="countdown__num" data-cd="days">00</span><span class="countdown__lbl">Days</span></div>
+                <div class="countdown__sep">:</div>
+                <div class="countdown__unit"><span class="countdown__num" data-cd="hours">00</span><span class="countdown__lbl">Hrs</span></div>
+                <div class="countdown__sep">:</div>
+                <div class="countdown__unit"><span class="countdown__num" data-cd="mins">00</span><span class="countdown__lbl">Min</span></div>
+                <div class="countdown__sep">:</div>
+                <div class="countdown__unit"><span class="countdown__num" data-cd="secs">00</span><span class="countdown__lbl">Sec</span></div>
+              </div>
+            <a class="event-card__link link" href="https://www.olympics.com/fr/dakar-2026/" target="_blank" rel="noopener">Official website →</a>
+          </div>
+          <div class="event-card" data-reveal>
+            <span class="event-card__logo"><img src="assets/images/events/a1ded6b89a3ff98e73881ad7b4f69028966704d7.png" alt="6th Asian Indoor &amp; Martial Art Games, Riyadh 2026" loading="lazy" /></span>
+            <div class="event-card__head">
+              
+              <div class="event-card__body">
+                <h3 class="event-card__title">6th Asian Indoor &amp; Martial Art Games, Riyadh 2026</h3>
+                <div class="event-card__meta"><span>📍 Riyadh, Saudi Arabia</span><span>🗓 13 – 21 DEC 2026</span></div>
+              </div>
+            </div>
+            
+              <div class="countdown countdown--mini" data-countdown="2026-12-13T00:00:00" role="timer" aria-label="Countdown to event">
+                <div class="countdown__unit"><span class="countdown__num" data-cd="days">00</span><span class="countdown__lbl">Days</span></div>
+                <div class="countdown__sep">:</div>
+                <div class="countdown__unit"><span class="countdown__num" data-cd="hours">00</span><span class="countdown__lbl">Hrs</span></div>
+                <div class="countdown__sep">:</div>
+                <div class="countdown__unit"><span class="countdown__num" data-cd="mins">00</span><span class="countdown__lbl">Min</span></div>
+                <div class="countdown__sep">:</div>
+                <div class="countdown__unit"><span class="countdown__num" data-cd="secs">00</span><span class="countdown__lbl">Sec</span></div>
+              </div>
+            
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FEATURED ATHLETES -->
+    <section class="section athletes has-grain" id="athletes">
+      <img class="athletes__watermark" src="assets/images/decor/olympic_rings.svg" alt="" aria-hidden="true" />
+      <div class="container">
+        <div class="section__head section__head--center">
+          <span class="eyebrow eyebrow--icon"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="14.5" r="6.5"/><path d="M8.5 8.5 6 2M15.5 8.5 18 2"/><path d="m12 11.5 1.2 2.4 2.6.3-1.9 1.8.5 2.6L12 19l-2.4 1.4.5-2.6-1.9-1.8 2.6-.3z"/></svg><span>Faces of the Nation</span></span>
+          <h2>Our Athletes</h2>
+          <p>Meet our champions who make the nation proud</p>
+        </div>
+        <div class="athletes__grid" data-reveal-group>
+          <a class="athlete-card" href="#athletes" data-reveal>
+            <div class="athlete-card__media">
+              <img src="assets/images/athletes/Sagor%20Islam.webp" alt="Sagor Islam" loading="lazy" />
+            </div>
+            <div class="athlete-card__overlay">
+              <span class="athlete-card__sport athlete-card__sport--archery"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="3.2"/><path d="M11 13 21 3M15.5 3H21v5.5"/></svg>Archery</span>
+              <div class="athlete-card__name">Sagor Islam</div>
+            </div>
+          </a>
+          <a class="athlete-card" href="#athletes" data-reveal>
+            <div class="athlete-card__media">
+              <img src="assets/images/athletes/Imranur%20Rahman.png" alt="Imranur Rahman" loading="lazy" />
+            </div>
+            <div class="athlete-card__overlay">
+              <span class="athlete-card__sport athlete-card__sport--athletics"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="15.5" cy="5" r="2"/><path d="M6 21l3-5 3-2-1.5-4-4 2-1 3M12 10l3.5 1.5L20 9M9 16l-4 1"/></svg>Athletics</span>
+              <div class="athlete-card__name">Imranur Rahman</div>
+            </div>
+          </a>
+          <a class="athlete-card" href="#athletes" data-reveal>
+            <div class="athlete-card__media">
+              <img src="assets/images/athletes/Muhammad%20Robiul%20Islam.webp" alt="Muhammad Robiul Islam" loading="lazy" />
+            </div>
+            <div class="athlete-card__overlay">
+              <span class="athlete-card__sport athlete-card__sport--shooting"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="1.6"/></svg>Shooting</span>
+              <div class="athlete-card__name">Muhammad Robiul Islam</div>
+            </div>
+          </a>
+          <a class="athlete-card" href="#athletes" data-reveal>
+            <div class="athlete-card__media">
+              <img src="assets/images/athletes/Samiul%20Islam%20Rafi.jpg" alt="Samiul Islam Rafi" loading="lazy" />
+            </div>
+            <div class="athlete-card__overlay">
+              <span class="athlete-card__sport athlete-card__sport--swimming"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="7" r="2"/><path d="M4 11l5.5-2 3.5 2.5M3 16.5c1.4 1.1 2.6 1.1 4 0s2.6-1.1 4 0 2.6 1.1 4 0 2.6-1.1 4 0M3 20c1.4 1.1 2.6 1.1 4 0s2.6-1.1 4 0 2.6 1.1 4 0 2.6-1.1 4 0"/></svg>Swimming</span>
+              <div class="athlete-card__name">Samiul Islam Rafi</div>
+            </div>
+          </a>
+          <a class="athlete-card" href="#athletes" data-reveal>
+            <div class="athlete-card__media">
+              <img src="assets/images/athletes/Sonia%20Khatun.jpg" alt="Sonia Khatun" loading="lazy" />
+            </div>
+            <div class="athlete-card__overlay">
+              <span class="athlete-card__sport athlete-card__sport--swimming"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="7" r="2"/><path d="M4 11l5.5-2 3.5 2.5M3 16.5c1.4 1.1 2.6 1.1 4 0s2.6-1.1 4 0 2.6 1.1 4 0 2.6-1.1 4 0M3 20c1.4 1.1 2.6 1.1 4 0s2.6-1.1 4 0 2.6 1.1 4 0 2.6-1.1 4 0"/></svg>Swimming</span>
+              <div class="athlete-card__name">Sonia Khatun</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. LATEST ACTIVITIES — same premium style as Latest News -->
+    <section class="section activities news" id="activities">
+      <svg class="news__deco news__deco--tl" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" d="M8 3h8v4a4 4 0 0 1-8 0zM8 4.5H5.4A1.4 1.4 0 0 0 4 5.9C4 8 5.6 9.4 7.7 9.6M16 4.5h2.6A1.4 1.4 0 0 1 20 5.9C20 8 18.4 9.4 16.3 9.6M12 11v4.5M8.5 21h7M9.7 21l.6-4M14.3 21l-.6-4"/></svg>
+      <svg class="news__deco news__deco--br" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" d="M12 22a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM12 14V9.5M9.5 3.5h5M12 6V3.5M18.6 6.4 20 5"/></svg>
+      <div class="container">
+        <div class="section__head-row">
+          <div class="section__head">
+            <span class="eyebrow eyebrow--icon"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2.5 7 5-14 2.5 7H21"/></svg><span>On the Ground</span></span>
+            <h2>Latest Activities</h2>
+            <p>Discover our recent events, updates, and news.</p>
+          </div>
+        </div>
+        <div class="news__grid" data-reveal-group>
+          <article class="news-card" data-reveal>
+            <a class="news-card__img" href="#activities">
+              <img src="assets/images/activities/bfdb5162ed4f24eb6a516b006fecd8a576cca8a5.jpeg" alt="ত্রিশাল সামরিক প্রশিক্ষণ এলাকা, ময়মনসিংহে বাংলাদেশ অলিম্পিক এসোসিয়েশন এবং বাংলাদেশ সেনাবাহিনীর যৌথ উদ্যোগে নির্মিতব্য 'বাংলাদেশ অলিম্পিক কমপ্লেক্স' এর ভিত্তিপ্রস্তর স্থাপন" loading="lazy" />
+              
+            </a>
+            <div class="news-card__body">
+              <h3 class="news-card__title"><a href="#activities">ত্রিশাল সামরিক প্রশিক্ষণ এলাকা, ময়মনসিংহে বাংলাদেশ অলিম্পিক এসোসিয়েশন এবং বাংলাদেশ সেনাবাহিনীর যৌথ উদ্যোগে নির্মিতব্য 'বাংলাদেশ অলিম্পিক কমপ্লেক্স' এর ভিত্তিপ্রস্তর স্থাপন</a></h3>
+              <a class="news-card__more" href="#activities">Read Full Story <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="news-card" data-reveal>
+            <a class="news-card__img" href="#activities">
+              <img src="assets/images/gellary/3f9567cf9ea943c31528e6be12e0aa3f4769d4a3.JPG" alt="King's Baton Relay of 23rd Commonwealth Games, Glasgow 2026" loading="lazy" />
+              
+            </a>
+            <div class="news-card__body">
+              <h3 class="news-card__title"><a href="#activities">King's Baton Relay of 23rd Commonwealth Games, Glasgow 2026</a></h3>
+              <a class="news-card__more" href="#activities">Read Full Story <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="news-card" data-reveal>
+            <a class="news-card__img" href="#activities">
+              <img src="assets/images/activities/d442555dd5b66fc102937d39c2e4850907468294.jpg" alt="Technical Course for Coaches in Golf" loading="lazy" />
+              
+            </a>
+            <div class="news-card__body">
+              <h3 class="news-card__title"><a href="#activities">Technical Course for Coaches in Golf</a></h3>
+              <a class="news-card__more" href="#activities">Read Full Story <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="news-card" data-reveal>
+            <a class="news-card__img" href="#activities">
+              <img src="assets/images/activities/8fd5dbfefaa666a5e8b0fd3e652ba38f3313b96d.jpg" alt="Aichi-Nagoya 2026 Asian Games Fun Run" loading="lazy" />
+              
+            </a>
+            <div class="news-card__body">
+              <h3 class="news-card__title"><a href="#activities">Aichi-Nagoya 2026 Asian Games Fun Run</a></h3>
+              <a class="news-card__more" href="#activities">Read Full Story <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="news-card" data-reveal>
+            <a class="news-card__img" href="#activities">
+              <img src="assets/images/activities/2c164aaba13d4dfe30859ad7ccbec477febf5f70.jpg" alt="Olympic Day 2026" loading="lazy" />
+              
+            </a>
+            <div class="news-card__body">
+              <h3 class="news-card__title"><a href="#activities">Olympic Day 2026</a></h3>
+              <a class="news-card__more" href="#activities">Read Full Story <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="news-card" data-reveal>
+            <a class="news-card__img" href="#activities">
+              <img src="assets/images/activities/c3e6d274b0f4ba5c68cad862ae7ea7268aa7e098.JPG" alt="Athlete365 Career+ Workshop" loading="lazy" />
+              
+            </a>
+            <div class="news-card__body">
+              <h3 class="news-card__title"><a href="#activities">Athlete365 Career+ Workshop</a></h3>
+              <a class="news-card__more" href="#activities">Read Full Story <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        </div>
+        <div class="news__cta">
+          <a class="btn btn--outline btn--lg btn--sweep" href="#activities">See All Activities <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6b. LATEST NEWS -->
+    <section class="section section--soft news" id="news" style="display: none;">
+      <svg class="news__deco news__deco--tl" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" d="M12 2c1.9 2.7 3.4 4.4 3.4 6.9A3.4 3.4 0 0 1 8.6 9c0-1.2.5-2.2 1.3-3 .1.9.7 1.7 1.4 2-.4-2.2.3-4.3.7-6zM9.2 11.6 11 16h2l1.8-4.4M11 16l-1.4 6.5M13 16l1.4 6.5M8.9 22.5h6.2"/></svg>
+      <svg class="news__deco news__deco--br" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" d="M8.5 2l3.5 5.5L15.5 2M12 22a6.6 6.6 0 1 0 0-13.2A6.6 6.6 0 0 0 12 22zm0-9.5 1.25 2.5 2.75.4-2 1.95.47 2.75L12 18.85l-2.47 1.3.47-2.75-2-1.95 2.75-.4z"/></svg>
+      <div class="container">
+        <div class="section__head-row">
+          <div class="section__head">
+            <span class="eyebrow eyebrow--icon"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13v15H5a1 1 0 0 1-1-1z"/><path d="M17 8h3v10a2 2 0 0 1-2 2M8 9h5M8 13h5M8 17h3"/></svg><span>Newsroom</span></span>
+            <h2>Latest News</h2>
+            <p>Latest news and announcements from Bangladesh Olympic Association</p>
+          </div>
+        </div>
+        <div class="news__grid" data-reveal-group>
+          <article class="news-card" data-reveal>
+            <a class="news-card__img" href="#news">
+              <img src="assets/images/news/c3e6d274b0f4ba5c68cad862ae7ea7268aa7e098.JPG" alt="Athlete365 Career+ Workshop" loading="lazy" />
+              <span class="news-card__date"><svg class="news-card__dateic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg><span>JUL 08, 2026</span></span>
+            </a>
+            <div class="news-card__body">
+              <h3 class="news-card__title"><a href="#news">Athlete365 Career+ Workshop</a></h3>
+              <a class="news-card__more" href="#news">Read Full Story <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="news-card" data-reveal>
+            <a class="news-card__img" href="#news">
+              <img src="assets/images/news/2c164aaba13d4dfe30859ad7ccbec477febf5f70.jpg" alt="প্রেস বিজ্ঞপ্তি - অলিম্পিক ডে ২০২৬" loading="lazy" />
+              <span class="news-card__date"><svg class="news-card__dateic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg><span>JUN 27, 2026</span></span>
+            </a>
+            <div class="news-card__body">
+              <h3 class="news-card__title"><a href="#news">প্রেস বিজ্ঞপ্তি - অলিম্পিক ডে ২০২৬</a></h3>
+              <a class="news-card__more" href="#news">Read Full Story <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="news-card" data-reveal>
+            <a class="news-card__img" href="#news">
+              <img src="assets/images/news/083e0b64dd2b7e9bf8cbf7e9c71101b0be9b7fc1.jpg" alt="২০তম এশিয়ান গেমস উপলক্ষে ফান রান অনুষ্ঠান আয়োজন" loading="lazy" />
+              <span class="news-card__date"><svg class="news-card__dateic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg><span>JUN 10, 2026</span></span>
+            </a>
+            <div class="news-card__body">
+              <h3 class="news-card__title"><a href="#news">২০তম এশিয়ান গেমস উপলক্ষে ফান রান অনুষ্ঠান আয়োজন</a></h3>
+              <a class="news-card__more" href="#news">Read Full Story <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="news-card" data-reveal>
+            <a class="news-card__img" href="#news">
+              <img src="assets/images/news/bfdb5162ed4f24eb6a516b006fecd8a576cca8a5.jpeg" alt="ত্রিশাল সামরিক প্রশিক্ষণ এলাকা, ময়মনসিংহে বাংলাদেশ অলিম্পিক এসোসিয়েশন এবং বাংলাদেশ সেনাবাহিনীর যৌথ উদ্যোগে নির্মিতব্য 'বাংলাদেশ অলিম্পিক কমপ্লেক্স' এর ভিত্তিপ্রস্তর স্থাপন" loading="lazy" />
+              <span class="news-card__date"><svg class="news-card__dateic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg><span>FEB 01, 2026</span></span>
+            </a>
+            <div class="news-card__body">
+              <h3 class="news-card__title"><a href="#news">ত্রিশাল সামরিক প্রশিক্ষণ এলাকা, ময়মনসিংহে বাংলাদেশ অলিম্পিক এসোসিয়েশন এবং বাংলাদেশ সেনাবাহিনীর যৌথ উদ্যোগে নির্মিতব্য 'বাংলাদেশ অলিম্পিক কমপ্লেক্স' এর ভিত্তিপ্রস্তর স্থাপন</a></h3>
+              <a class="news-card__more" href="#news">Read Full Story <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="news-card" data-reveal>
+            <a class="news-card__img" href="#news">
+              <img src="assets/images/gellary/3d350b4c0d4178f71ba0213ce33bcfb8615ad731.jpg" alt="আর্ন্তজাতিক অলিম্পিক কমিটির অলিম্পিক সলিডারিটির পৃষ্ঠপোষকতায় বাংলাদেশ অলিম্পিক এসোসিয়েশন কর্তৃক আয়োজন করা হলো 'Sport Administrators Course' শীর্ষক প্রশিক্ষণ প্রোগ্রাম" loading="lazy" />
+              <span class="news-card__date"><svg class="news-card__dateic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg><span>JAN 14, 2026</span></span>
+            </a>
+            <div class="news-card__body">
+              <h3 class="news-card__title"><a href="#news">আর্ন্তজাতিক অলিম্পিক কমিটির অলিম্পিক সলিডারিটির পৃষ্ঠপোষকতায় বাংলাদেশ অলিম্পিক এসোসিয়েশন কর্তৃক আয়োজন করা হলো 'Sport Administrators Course' শীর্ষক প্রশিক্ষণ প্রোগ্রাম</a></h3>
+              <a class="news-card__more" href="#news">Read Full Story <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="news-card" data-reveal>
+            <a class="news-card__img" href="#news">
+              <img src="assets/images/gellary/3f9567cf9ea943c31528e6be12e0aa3f4769d4a3.JPG" alt="২৩তম কমনওয়েলথ গেমস ব্যাটন রীলে" loading="lazy" />
+              <span class="news-card__date"><svg class="news-card__dateic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg><span>DEC 17, 2025</span></span>
+            </a>
+            <div class="news-card__body">
+              <h3 class="news-card__title"><a href="#news">২৩তম কমনওয়েলথ গেমস ব্যাটন রীলে</a></h3>
+              <a class="news-card__more" href="#news">Read Full Story <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        </div>
+        <div class="news__cta">
+          <a class="btn btn--outline btn--lg btn--sweep" href="#news">See All News <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6c. FEATURED MOMENTS (GALLERY — Masonry) -->
+    <section class="section moments" id="moments">
+      <div class="moments__icons" aria-hidden="true">
+        <span class="moments__icon moments__icon--flame"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.6 3 4 4.6 4 8a4 4 0 0 1-8 0c0-1.3.5-2.4 1.4-3.2.1 1 .7 1.9 1.5 2.2-.5-2.6.2-5.2 1.1-7z"/></svg></span>
+        <span class="moments__icon moments__icon--rings"><svg viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6.5" cy="8" r="3.2"/><circle cx="12" cy="8" r="3.2"/><circle cx="17.5" cy="8" r="3.2"/><circle cx="9.2" cy="12.5" r="3.2"/><circle cx="14.8" cy="12.5" r="3.2"/></svg></span>
+        <span class="moments__icon moments__icon--medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8.5 3 12 9l3.5-6"/><circle cx="12" cy="15.5" r="5.3"/><path d="M12 12.6l.9 1.9 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2-1.5-1.4 2-.3z" fill="currentColor" stroke="none"/></svg></span>
+        <span class="moments__icon moments__icon--star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.1 1.2 6L12 20.6 6.6 19.5l1.2-6-4.5-4.1 6.1-.7z"/></svg></span>
+        <span class="moments__icon moments__icon--trophy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v3.5a5 5 0 0 1-10 0zM7 5H4.5A1.5 1.5 0 0 0 3 6.5C3 9 5 10.6 7 10.8M17 5h2.5A1.5 1.5 0 0 1 21 6.5C21 9 19 10.6 17 10.8M12 12.5v4M8.5 20.5h7M10 20.5l.4-4M14 20.5l-.4-4"/></svg></span>
+        <span class="moments__icon moments__icon--laurel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 21c-4-1-6.5-4.6-6.5-9M12 21c4-1 6.5-4.6 6.5-9"/><path d="M6 9.5c1 .3 2 .1 2.8-.5M7 12.5c1 .3 2 .1 2.8-.5M9 15.5c1 .3 2 .1 2.8-.5M18 9.5c-1 .3-2 .1-2.8-.5M17 12.5c-1 .3-2 .1-2.8-.5M15 15.5c-1 .3-2 .1-2.8-.5"/></svg></span>
+        <span class="moments__icon moments__icon--target"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+        <span class="moments__icon moments__icon--bolt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span>
+      </div>
+      <div class="container">
+        <div class="section__head section__head--center">
+          <span class="eyebrow eyebrow--icon"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg><span>Featured Moments</span></span>
+          <h2>Celebrating Excellence &amp; Achievement in Sports</h2>
+        </div>
+        <div class="mgal">
+          <!-- Gallery One — Team Bangladesh Athletes -->
+          <a class="mgal__card" href="assets/images/gellary/athletes/Sagor%20Islam.webp" data-fancybox="gallery-athletes" data-caption="Sagor Islam" data-reveal>
+            <div class="mgal__media">
+              <img src="assets/images/gellary/athletes/Sagor%20Islam.webp" alt="Team Bangladesh Athletes gallery" loading="lazy" />
+              <span class="mgal__badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>7 Photos</span>
+              <span class="mgal__zoom"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M11 8v6M8 11h6M20.5 20.5 16.5 16.5"/></svg></span>
+            </div>
+            <div class="mgal__body">
+              <h3 class="mgal__title">Team Bangladesh Athletes</h3>
+              <span class="mgal__cta">View Gallery<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+          <a href="assets/images/gellary/athletes/7.jpg" data-fancybox="gallery-athletes" data-caption="7" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/athletes/9.webp" data-fancybox="gallery-athletes" data-caption="9" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/athletes/Imranur%20Rahman.png" data-fancybox="gallery-athletes" data-caption="Imranur Rahman" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/athletes/Muhammad%20Robiul%20Islam.webp" data-fancybox="gallery-athletes" data-caption="Muhammad Robiul Islam" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/athletes/Samiul%20Islam%20Rafi.jpg" data-fancybox="gallery-athletes" data-caption="Samiul Islam Rafi" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/athletes/Sonia%20Khatun.jpg" data-fancybox="gallery-athletes" data-caption="Sonia Khatun" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+
+          <!-- Gallery Two — BOA Events -->
+          <a class="mgal__card" href="assets/images/gellary/boa/1d6fe1fc096ff40202a7437a07860f998e64d8e3.JPG" data-fancybox="gallery-boa" data-caption="6th General Assembly Meeting of BOA" data-reveal>
+            <div class="mgal__media">
+              <img src="assets/images/gellary/boa/1d6fe1fc096ff40202a7437a07860f998e64d8e3.JPG" alt="BOA events and ceremonies gallery" loading="lazy" />
+              <span class="mgal__badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>9 Photos</span>
+              <span class="mgal__zoom"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M11 8v6M8 11h6M20.5 20.5 16.5 16.5"/></svg></span>
+            </div>
+            <div class="mgal__body">
+              <h3 class="mgal__title">BOA Events &amp; Ceremonies</h3>
+              <span class="mgal__cta">View Gallery<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+          <a href="assets/images/gellary/boa/1d625857b8b9eaf3eb4cdad5d16953b5c89337fa.jpg" data-fancybox="gallery-boa" data-caption="BOA Events" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/boa/3d350b4c0d4178f71ba0213ce33bcfb8615ad731.jpg" data-fancybox="gallery-boa" data-caption="BOA Events" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/boa/5eef4e74d5cc877b498f5c0803dca40df0c7919d.JPG" data-fancybox="gallery-boa" data-caption="BOA Events" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/boa/794ade254d2a8ff9f863bc9a86aa2c9995b73a2b.jpg" data-fancybox="gallery-boa" data-caption="BOA Events" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/boa/7d41191ed5647e9c07e40ed2b9225d26404ee7f6.jpg" data-fancybox="gallery-boa" data-caption="BOA Events" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/boa/b8e33bcaf821180c18a1f6e60745ffbb74653db8.jpg" data-fancybox="gallery-boa" data-caption="BOA Events" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/boa/bb1b0f84ab885a2e32c47d3b4afca0b951636d87.jpg" data-fancybox="gallery-boa" data-caption="BOA Events" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/boa/d3fd84388b4f9edf2bd94164295fca23c4d0cdfa.JPG" data-fancybox="gallery-boa" data-caption="BOA Events" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+
+          <!-- Gallery Three — Olympic Moments -->
+          <a class="mgal__card" href="assets/images/gellary/oplympics/1.jpg" data-fancybox="gallery-olympics" data-caption="Olympic Moments" data-reveal>
+            <div class="mgal__media">
+              <img src="assets/images/gellary/oplympics/1.jpg" alt="Olympic moments gallery" loading="lazy" />
+              <span class="mgal__badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>17 Photos</span>
+              <span class="mgal__zoom"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M11 8v6M8 11h6M20.5 20.5 16.5 16.5"/></svg></span>
+            </div>
+            <div class="mgal__body">
+              <h3 class="mgal__title">Olympic Moments</h3>
+              <span class="mgal__cta">View Gallery<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+          <a href="assets/images/gellary/oplympics/10.webp" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/11.jpg" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/12.webp" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/14.jpg" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/16.jpg" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/17.jpg" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/18.jpg" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/2.jpg" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/20.jpeg" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/21.jpg" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/22.webp" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/23.jpg" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/3.jpg" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/4.webp" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/5.webp" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/oplympics/6.webp" data-fancybox="gallery-olympics" data-caption="Olympic Moments" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+
+          <!-- Gallery Four — Coaching &amp; Technical Courses -->
+          <a class="mgal__card" href="assets/images/gellary/courses/1.jpg" data-fancybox="gallery-courses" data-caption="Athlete365 Career+ Workshop" data-reveal>
+            <div class="mgal__media">
+              <img src="assets/images/gellary/courses/1.jpg" alt="BOA coaching and technical courses gallery" loading="lazy" />
+              <span class="mgal__badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>5 Photos</span>
+              <span class="mgal__zoom"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M11 8v6M8 11h6M20.5 20.5 16.5 16.5"/></svg></span>
+            </div>
+            <div class="mgal__body">
+              <h3 class="mgal__title">Coaching &amp; Technical Courses</h3>
+              <span class="mgal__cta">View Gallery<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+          <a href="assets/images/gellary/courses/2.jpg" data-fancybox="gallery-courses" data-caption="Technical Course for Coaches in Wushu" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/courses/3.jpg" data-fancybox="gallery-courses" data-caption="Technical Course for Coaches in Golf" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/courses/4.jpg" data-fancybox="gallery-courses" data-caption="Olympic Solidarity Technical Course for Coaches in Badminton" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/courses/5.jpg" data-fancybox="gallery-courses" data-caption="Olympic Solidarity Sport Administrators Course" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+
+          <!-- Gallery Five — Development &amp; Community -->
+          <a class="mgal__card" href="assets/images/gellary/community/3.jpg" data-fancybox="gallery-community" data-caption="Olympic Day 2026" data-reveal>
+            <div class="mgal__media">
+              <img src="assets/images/gellary/community/3.jpg" alt="BOA development and community programs gallery" loading="lazy" />
+              <span class="mgal__badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>5 Photos</span>
+              <span class="mgal__zoom"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M11 8v6M8 11h6M20.5 20.5 16.5 16.5"/></svg></span>
+            </div>
+            <div class="mgal__body">
+              <h3 class="mgal__title">Development &amp; Community</h3>
+              <span class="mgal__cta">View Gallery<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+          <a href="assets/images/gellary/community/2.jpg" data-fancybox="gallery-community" data-caption="National Federation Administration Development Program" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/community/1.jpg" data-fancybox="gallery-community" data-caption="Youth Athlete Development — Identification &amp; Training" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/community/4.jpg" data-fancybox="gallery-community" data-caption="International Day of Sport for Development &amp; Peace" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/community/5.jpg" data-fancybox="gallery-community" data-caption="BOA Iftar Mahfil 2026" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+
+          <!-- Gallery Six — Games, Honours &amp; Milestones -->
+          <a class="mgal__card" href="assets/images/gellary/games/1.jpg" data-fancybox="gallery-games" data-caption="King's Baton Relay of 23rd Commonwealth Games, Glasgow 2026" data-reveal>
+            <div class="mgal__media">
+              <img src="assets/images/gellary/games/1.jpg" alt="Bangladesh games, honours and milestones gallery" loading="lazy" />
+              <span class="mgal__badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>5 Photos</span>
+              <span class="mgal__zoom"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M11 8v6M8 11h6M20.5 20.5 16.5 16.5"/></svg></span>
+            </div>
+            <div class="mgal__body">
+              <h3 class="mgal__title">Games, Honours &amp; Milestones</h3>
+              <span class="mgal__cta">View Gallery<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+          <a href="assets/images/gellary/games/2.jpg" data-fancybox="gallery-games" data-caption="Bangladesh Olympic Complex Foundation Stone Laying" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/games/3.jpg" data-fancybox="gallery-games" data-caption="Honouring Medal Winners of Asian Youth Games &amp; 6th Islamic Solidarity Games" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/games/4.jpg" data-fancybox="gallery-games" data-caption="Aichi-Nagoya 2026 Asian Games Fun Run" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+          <a href="assets/images/gellary/games/5.jpg" data-fancybox="gallery-games" data-caption="20th Asian Games Fun Run" class="mgal__src" aria-hidden="true" tabindex="-1"></a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 11. INTERNATIONAL AFFILIATION -->
+    <section class="section affiliation-wrap" id="affiliation">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <span class="eyebrow eyebrow--icon"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span>Recognised & Affiliated</span></span>
+          <h2>International Affiliation</h2>
+          <p class="lead">BOA has been internationally affiliated with</p>
+        </div>
+        <div class="affiliation" data-reveal-group>
+          <a class="affiliation__item" href="https://www.olympics.com/ioc" target="_blank" rel="noopener" data-reveal>
+            <img src="assets/images/affiliation/1fcc5c0d1906cbd9ae5f166043e6812e6713432b.png" alt="IOC" loading="lazy" />
+          </a>
+          <a class="affiliation__item" href="https://www.anocolympic.org/" target="_blank" rel="noopener" data-reveal>
+            <img src="assets/images/affiliation/c966957296b297ac2c2e9c510782d3fb8bb3f517.png" alt="ANOC" loading="lazy" />
+          </a>
+          <a class="affiliation__item" href="https://www.commonwealthsport.com/" target="_blank" rel="noopener" data-reveal>
+            <img src="assets/images/affiliation/208c3fcf8fe6d4d3e5bf66758e202402979a5ebc.png" alt="Commonwealth Sport" loading="lazy" />
+          </a>
+          <a class="affiliation__item" href="https://issa.sport/en" target="_blank" rel="noopener" data-reveal>
+            <img src="assets/images/affiliation/31abec7bc5ba47e240477461cd3817eb994e2075.png" alt="Islamic Solidarity Sports Association" loading="lazy" />
+          </a>
+          <a class="affiliation__item" href="https://oca.asia/" target="_blank" rel="noopener" data-reveal>
+            <img src="assets/images/affiliation/7a54af127e47c429486532dd3e6775357e5a55cb.png" alt="OCA" loading="lazy" />
+          </a>
+          <a class="affiliation__item" href="#"  data-reveal>
+            <img src="assets/images/affiliation/WhatsApp%20Image%202026-07-14%20at%208.50.44%20PM.png" alt="South Asia Olympic Council" loading="lazy" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. WORLDWIDE OLYMPIC PARTNERS -->
+    <section class="section section--soft partners-section">
+      <div class="container container--xl">
+        <div class="section__head section__head--center">
+          <span class="eyebrow eyebrow--icon"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.6 5.6L21 9.3l-4.6 4.2 1.2 6.4L12 16.9 6.4 19.9l1.2-6.4L3 9.3l6.4-.7z"/></svg><span>With the Support Of</span></span>
+          <h2>Worldwide Olympic Partners</h2>
+        </div>
+        <div class="partners-grid" data-reveal-group>
+          <a class="partner-card" href="https://www.olympics.com/ioc/partners/ab-inbev" target="_blank" rel="noopener" aria-label="AB" data-reveal>
+            <img class="partner-card__logo" src="assets/images/partners/4ec99067ae413334eeda451619c0c35c3813796a.svg" alt="AB" loading="lazy" />
+          </a>
+          <a class="partner-card" href="https://www.olympics.com/ioc/partners/airbnb" target="_blank" rel="noopener" aria-label="Airbnb" data-reveal>
+            <img class="partner-card__logo" src="assets/images/partners/4fc223f5668638d697fffe84437654e4aefe6cb5.svg" alt="Airbnb" loading="lazy" />
+          </a>
+          <a class="partner-card" href="https://www.olympics.com/ioc/partners/alibaba" target="_blank" rel="noopener" aria-label="Alibaba" data-reveal>
+            <img class="partner-card__logo" src="assets/images/partners/f0fdf5808b274b4624fd04b6cb353fc6bc6c9e57.svg" alt="Alibaba" loading="lazy" />
+          </a>
+          <a class="partner-card" href="https://www.olympics.com/ioc/partners/allianz" target="_blank" rel="noopener" aria-label="Allianz" data-reveal>
+            <img class="partner-card__logo" src="assets/images/partners/c4eef9d972d7abff116a0fb77c9b8a9f494b1f25.svg" alt="Allianz" loading="lazy" />
+          </a>
+          <a class="partner-card" href="https://www.olympics.com/ioc/partners/coca-cola-mengniu" target="_blank" rel="noopener" aria-label="Coca-Cola" data-reveal>
+            <img class="partner-card__logo" src="assets/images/partners/28d6336ca4cef16018aa37f3fef47e7fd30beb6b.svg" alt="Coca-Cola" loading="lazy" />
+          </a>
+          <a class="partner-card" href="https://www.olympics.com/ioc/partners/deloitte" target="_blank" rel="noopener" aria-label="Deloitte" data-reveal>
+            <img class="partner-card__logo" src="assets/images/partners/b69f7fa992e5c263b5491d72f683acde886cf45f.svg" alt="Deloitte" loading="lazy" />
+          </a>
+          <a class="partner-card" href="https://www.olympics.com/ioc/partners/omega" target="_blank" rel="noopener" aria-label="Omega" data-reveal>
+            <img class="partner-card__logo" src="assets/images/partners/832cb46a9d3d3efdc02bbe10719bffb985b0fb86.svg" alt="Omega" loading="lazy" />
+          </a>
+          <a class="partner-card" href="https://www.olympics.com/ioc/partners/samsung" target="_blank" rel="noopener" aria-label="Samsung" data-reveal>
+            <img class="partner-card__logo" src="assets/images/partners/cd42deda76e336d4e762e008a063c61a212155ca.svg" alt="Samsung" loading="lazy" />
+          </a>
+          <a class="partner-card" href="https://www.olympics.com/ioc/partners/tcl" target="_blank" rel="noopener" aria-label="TCL" data-reveal>
+            <img class="partner-card__logo" src="assets/images/partners/a8d292c6918a6b083b7bbfc1b0e74d450a8aa035.svg" alt="TCL" loading="lazy" />
+          </a>
+          <a class="partner-card" href="https://www.olympics.com/ioc/partners/visa" target="_blank" rel="noopener" aria-label="Visa" data-reveal>
+            <img class="partner-card__logo" src="assets/images/partners/a44a88bb2be7b3a1e3e5c8cfc0ecddefd2813062.svg" alt="Visa" loading="lazy" />
+          </a>
+          <a class="partner-card" href="https://www.olympics.com/ioc/partners/proctergamble" target="_blank" rel="noopener" aria-label="P&amp;G" data-reveal>
+            <img class="partner-card__logo" src="assets/images/partners/851737af886f8ee44fb40f589c2141d5fc4eeab0.svg" alt="P&amp;G" loading="lazy" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. STAY CONNECTED & UPDATED — newsletter + contact + social feed -->
+    <section class="section engage" id="engage">
+      <span class="engage__glow" aria-hidden="true"></span>
+      <svg class="engage__deco" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6l.95 1.95 2.15.31-1.55 1.52.36 2.14L12 7.53l-1.91 1L10.45 6.4 8.9 4.86l2.15-.31z"/><path d="M9.4 11h5.2v10H9.4zM3.2 14h6.2v7H3.2zM14.6 15.4h6.2V21h-6.2zM2.2 21h19.6"/></g></svg>
+      <div class="container container--xl">
+        <div class="engage__grid">
+
+          <div class="engage__main" data-reveal-group>
+            <span class="eyebrow eyebrow--icon" data-reveal><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="m8.1 10.9 7.8-3.8M8.1 13.1l7.8 3.8"/></svg><span>Connect With Us</span></span>
+            <h2 class="engage__title" data-reveal>Stay Connected &amp; Updated</h2>
+            <p class="engage__lead" data-reveal>Stay updated with our monthly publications and insights. Subscribe to our newsletter and be the first to know about new events &amp; activities.</p>
+
+            <form class="subscribe field engage__form" data-subscribe data-reveal novalidate>
+              <input class="input" type="email" placeholder="Enter your email address" aria-label="Email address" required />
+              <button class="btn btn--accent" type="submit">Subscribe <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </form>
+            <p class="engage__note" data-subscribe-note data-reveal>We respect your privacy — unsubscribe anytime.</p>
+
+            <div class="engage__editions" data-reveal>
+              <span class="engage__editions-label">Recent editions</span>
+              <div class="engage__editions-list">
+            <a class="engage__edition" href="#engage"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>BOA Newsletter - July 2025 - 2nd Edition</span></a>
+            <a class="engage__edition" href="#engage"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>BOA Newsletter - October 2025 - 3rd Edition</span></a>
+              </div>
+            </div>
+
+            <ul class="engage__contact-list" data-reveal>
+              <li><span class="engage__ic"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><strong>Olympic Bhaban</strong><span>Rajuk Avenue, Outer Stadium, Purana Paltan, Dhaka 1000</span></div></li>
+              <li><span class="engage__ic"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><strong>Email</strong><a href="mailto:nocban@gmail.com">nocban@gmail.com</a></div></li>
+              <li><span class="engage__ic"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg></span><div><strong>Phone</strong><a href="tel:+880241050854">+880-2-41050854-7</a></div></li>
+            </ul>
+
+            <a class="btn btn--accent" href="https://nocban.org/contact" target="_blank" rel="noopener" data-reveal>Contact Us <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+
+          <aside class="engage__feed" data-reveal>
+            <div class="engage__feed-head">
+              <span class="engage__feed-ic"><svg class="eyebrow__ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="m8.1 10.9 7.8-3.8M8.1 13.1l7.8 3.8"/></svg></span>
+              <div>
+                <strong>From Our Social Channels</strong>
+                <span>Follow us on social media for latest updates and news</span>
+              </div>
+            </div>
+            <div class="engage__socials">
+            <a class="social-link social-link--fb" href="https://facebook.com/nocbangladesh" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.8 3.7-3.8 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.76-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+            <a class="social-link social-link--ig" href="https://instagram.com/nocbangladesh" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+            <a class="social-link social-link--li" href="https://linkedin.com/company/nocbangladesh/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 22 10.9 22 14.3V21h-4v-5.9c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z"/></svg></a>
+            <a class="social-link social-link--yt" href="https://youtube.com/@nocbangladesh" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+            <a class="social-link social-link--x" href="https://x.com/nocbangladesh" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.22-6.82-5.97 6.82H1.66l7.73-8.84L1.03 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.01 4.13H5.05z"/></svg></a>
+            <a class="social-link social-link--tt" href="https://tiktok.com/@nocbangladesh" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.1 1.5 3.4 3.5 3.62v2.4c-1.2.1-2.3-.28-3.5-1.03v5.68c0 3.98-3.2 6.3-6.5 5.48-3.6-.9-4.7-5.3-1.9-7.77 1-.9 2.4-1.3 3.9-1.02v2.62c-.5-.12-1-.1-1.5.08-1.2.46-1.5 1.98-.6 2.9.9.9 2.7.48 2.9-.9.04-.3.05-.6.05-.9V3z"/></svg></a>
+            </div>
+            <div class="engage__feed-embed">
+              <iframe title="Bangladesh Olympic Association on Facebook"
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnocbangladesh&tabs=timeline&width=500&height=560&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+                width="500" height="560" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
+            </div>
+            <a class="btn btn--outline btn--block" href="https://www.facebook.com/nocbangladesh" target="_blank" rel="noopener">Visit our Facebook Page <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 14. FOOTER -->
+  <footer class="footer">
+    <img class="footer__watermark" src="assets/images/decor/olympic_rings.svg" alt="" aria-hidden="true" />
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="assets/images/logo/logo.png" alt="Bangladesh Olympic Association" />
+        <p>The National Olympic Committee of Bangladesh — promoting Olympic values and developing sport across the nation since 1979.</p>
+        <div class="footer__social">
+          <a href="https://facebook.com/nocbangladesh" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.8 3.7-3.8 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.76-1.6 1.5V12h2.7l-.43 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="https://instagram.com/nocbangladesh" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://linkedin.com/company/nocbangladesh/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 22 10.9 22 14.3V21h-4v-5.9c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z"/></svg></a>
+          <a href="https://youtube.com/@nocbangladesh" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+          <a href="https://x.com/nocbangladesh" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.22-6.82-5.97 6.82H1.66l7.73-8.84L1.03 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.01 4.13H5.05z"/></svg></a>
+          <a href="https://tiktok.com/@nocbangladesh" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.1 1.5 3.4 3.5 3.62v2.4c-1.2.1-2.3-.28-3.5-1.03v5.68c0 3.98-3.2 6.3-6.5 5.48-3.6-.9-4.7-5.3-1.9-7.77 1-.9 2.4-1.3 3.9-1.02v2.62c-.5-.12-1-.1-1.5.08-1.2.46-1.5 1.98-.6 2.9.9.9 2.7.48 2.9-.9.04-.3.05-.6.05-.9V3z"/></svg></a>
+        </div>
+      </div>
+      <details class="footer__col" open>
+        <summary class="footer__title">Quick Links</summary>
+        <ul class="footer__links">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#activities">Activities</a></li>
+          <li><a href="#affiliation">Sponsors</a></li>
+        </ul>
+      </details>
+      <details class="footer__col" open>
+        <summary class="footer__title">Resources</summary>
+        <ul class="footer__links">
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </details>
+      <details class="footer__col" open>
+        <summary class="footer__title">Contact</summary>
+        <ul class="footer__contact">
+          <li>Olympic Bhaban, Rajuk Avenue, Outer Stadium, Purana Paltan, Dhaka 1000</li>
+          <li>nocban@gmail.com</li>
+          <li>+880-2-41050854-7</li>
+        </ul>
+      </details>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__credit">© <span data-year>2026</span> Developed By <svg class="footer__heart" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.3l-1.5-1.4C5.4 14.3 2 11.3 2 7.6 2 5.1 4 3 6.5 3c1.7 0 3.3.9 4.2 2.3L12 7l1.3-1.7C14.2 3.9 15.8 3 17.5 3 20 3 22 5.1 22 7.6c0 3.7-3.4 6.7-8.5 11.3L12 20.3z"/></svg> <a href="https://www.sklentr.com/" target="_blank" rel="noopener">sklentr</a></span>
+      <span>Privacy Policy · Terms of Service · Cookie Policy</span>
+    </div>
+  </footer>
+
+  <nav class="appbar" aria-label="Quick navigation">
+    <a class="appbar__item is-active" data-appnav href="#top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg><span>Home</span></a>
+    <a class="appbar__item" data-appnav href="#events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg><span>Events</span></a>
+    <a class="appbar__item" data-appnav href="#athletes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg><span>Athletes</span></a>
+    <a class="appbar__item" data-appnav href="#news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h12v15H5a1 1 0 0 1-1-1z"/><path d="M16 8h4v10a2 2 0 0 1-2 2M7 9h6M7 13h6M7 17h4"/></svg><span>News</span></a>
+    <button class="appbar__item appbar__menu" type="button" aria-label="Open menu" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg><span>Menu</span></button>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script type="module" src="assets/js/main.js?v=59"></script>
+</body>
+</html>

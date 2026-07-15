@@ -1,0 +1,65 @@
+@use "../abstracts" as *;
+// ==========================================================================
+// CONNECT BAND (Connect With Us & Stay Updated) — homepage §13
+// ==========================================================================
+
+.connect {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-primary);
+  color: #fff;
+  border-radius: var(--r-xl);
+  padding: var(--sp-12) var(--sp-6);
+
+  @include respond(lg) { padding: var(--sp-20) var(--sp-16); }
+
+  h2, p { color: #fff; }
+
+  &__grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: var(--sp-10);
+    grid-template-columns: 1fr;
+    @include respond(lg) { grid-template-columns: 1.2fr 1fr; align-items: center; }
+  }
+
+  &__list { display: grid; gap: var(--sp-5); margin-top: var(--sp-6); }
+  &__item {
+    display: flex;
+    gap: var(--sp-4);
+    align-items: flex-start;
+
+    .connect__ic {
+      flex-shrink: 0;
+      width: 46px; height: 46px;
+      display: grid; place-items: center;
+      border-radius: var(--r-md);
+      background: rgba(255,255,255,.12);
+      color: var(--c-accent-on-dark);
+    }
+    strong { display: block; font-family: var(--ff-heading); font-weight: 600; }
+    span { color: rgba(255,255,255,.78); font-size: var(--fs-body-sm); }
+  }
+
+  &__socials { display: flex; gap: var(--sp-3); margin-top: var(--sp-6); }
+  &__socials a {
+    width: 46px; height: 46px;
+    display: grid; place-items: center;
+    border-radius: var(--r-full);
+    background: rgba(255,255,255,.12);
+    color: #fff;
+    transition: background var(--t-fast), transform var(--t-fast);
+    &:hover { background: var(--c-accent); color: #fff; transform: translateY(-3px); }
+  }
+
+  // decorative rings
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    border: 2px solid rgba(255,255,255,.08);
+    border-radius: 50%;
+  }
+  &::before { width: 380px; height: 380px; top: -140px; right: -80px; }
+  &::after { width: 240px; height: 240px; bottom: -120px; right: 160px; border-color: rgba(111,195,234,.18); }
+}

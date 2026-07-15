@@ -1,0 +1,6 @@
+// Forwards SCSS tooling (functions, mixins, breakpoints) to partials.
+// NOTE: tokens (:root output) is intentionally excluded here and emitted
+// once from main.scss to avoid coupling CSS output to tooling imports.
+@forward "functions";
+@forward "breakpoints";
+@forward "mixins";

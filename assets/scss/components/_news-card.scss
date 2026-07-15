@@ -1,0 +1,156 @@
+@use "../abstracts" as *;
+// ==========================================================================
+// LATEST NEWS — premium card + Olympic torch motif
+// ==========================================================================
+
+.news {
+  position: relative;
+  overflow: hidden;
+
+  // faint, continuously-animated Olympic motifs (torch + medal — not the rings logo)
+  &__deco {
+    position: absolute;
+    width: 180px;
+    height: auto;
+    color: var(--c-primary);
+    opacity: .06;
+    pointer-events: none;
+    z-index: 0;
+
+    @include respond(lg) { width: 300px; }
+
+    &--tl {
+      top: -24px;
+      left: calc(var(--gutter) * -1);
+      animation: news-float-a 7s ease-in-out infinite;
+      transform-origin: center;
+    }
+    &--br {
+      bottom: -30px;
+      right: calc(var(--gutter) * -1);
+      color: var(--c-accent);
+      opacity: .08;
+      animation: news-float-b 9s ease-in-out infinite;
+      transform-origin: center;
+    }
+  }
+
+  // Match the Featured Athletes container width on desktop
+  .container { position: relative; z-index: 1; max-width: var(--container-xl); }
+
+  &__grid {
+    display: grid;
+    gap: var(--sp-6);
+    grid-template-columns: 1fr;
+
+    @include respond(sm) { grid-template-columns: repeat(2, 1fr); }
+    @include respond(lg) { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--sp-10);
+  }
+}
+
+// continuous, gentle idle motion for the decorative Olympic icons
+@keyframes news-float-a {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%      { transform: translateY(-16px) rotate(3deg); }
+}
+@keyframes news-float-b {
+  0%, 100% { transform: translateY(0) rotate(4deg) scale(1); }
+  50%      { transform: translateY(14px) rotate(-4deg) scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .news__deco { animation: none !important; }
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--c-bg);
+  border: 1px solid var(--c-line-soft);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--sh-sm);
+  transition: transform var(--t-base) var(--ease-out), box-shadow var(--t-base) var(--ease-out), border-color var(--t-base);
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sh-lg);
+    border-color: var(--c-line);
+    .news-card__img img { transform: scale(1.07); }
+    .news-card__title a { color: var(--c-primary); }
+    .news-card__more .btn__arrow { transform: translateX(5px); }
+  }
+
+  &__img {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--c-bg-muted);
+
+    img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--t-slow) var(--ease-out); }
+
+    // subtle gradient so the date chip reads on any image
+    &::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(15,26,23,.28), transparent 40%);
+    }
+  }
+
+  // floating date chip with torch icon
+  &__date {
+    position: absolute;
+    left: var(--sp-3); bottom: var(--sp-3);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 11px;
+    border-radius: var(--r-full);
+    background: rgba(255, 255, 255, .92);
+    backdrop-filter: blur(4px);
+    box-shadow: var(--sh-xs);
+    color: var(--c-ink-700);
+    font-size: var(--fs-caption);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+
+    .news-card__dateic { color: var(--c-primary); flex-shrink: 0; }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+    padding: var(--sp-5);
+    flex: 1;
+  }
+
+  &__title {
+    font-family: var(--ff-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.32;
+    @include clamp-lines(2);
+
+    a { color: var(--c-ink-900); transition: color var(--t-fast); }
+  }
+
+  &__more {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--fs-body-sm);
+    font-weight: 600;
+    color: var(--c-primary);
+
+    .btn__arrow { width: 16px; height: 16px; transition: transform var(--t-base) var(--ease-out); }
+  }
+}

@@ -1,0 +1,51 @@
+// ==========================================================================
+// SLIDER (Swiper) shared controls  —  claude.md §5.9
+// ==========================================================================
+
+.slider { position: relative; }
+
+// Brand nav arrows
+.slider-nav {
+  display: inline-flex;
+  gap: var(--sp-2);
+
+  button {
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    border-radius: var(--r-full);
+    border: 1.5px solid var(--c-line);
+    color: var(--c-ink-900);
+    background: var(--c-bg);
+    transition: all var(--t-fast);
+
+    &:hover { border-color: var(--c-primary); background: var(--c-primary); color: #fff; }
+    &.swiper-button-disabled { opacity: .4; pointer-events: none; }
+    svg { width: var(--ic-md); height: var(--ic-md); }
+  }
+}
+
+// Let cards breathe inside swiper
+.swiper { overflow: visible; }
+.swiper-wrapper { align-items: stretch; }
+.swiper-slide { height: auto; display: flex; }
+.swiper-slide > * { width: 100%; }
+
+// clip overflow on the section wrapper instead
+.slider__viewport { overflow: hidden; padding: var(--sp-2); margin: calc(var(--sp-2) * -1); }
+
+// Generic pagination
+.slider-pagination {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-6);
+
+  .swiper-pagination-bullet {
+    width: 8px; height: 8px;
+    background: var(--c-line);
+    opacity: 1;
+    border-radius: var(--r-full);
+    transition: width var(--t-base), background var(--t-base);
+  }
+  .swiper-pagination-bullet-active { width: 24px; background: var(--c-primary); }
+}

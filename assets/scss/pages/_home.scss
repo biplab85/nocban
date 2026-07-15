@@ -1,0 +1,327 @@
+@use "../abstracts" as *;
+// ==========================================================================
+// HOMEPAGE  —  section-specific layout & atmosphere  (claude.md §11)
+// ==========================================================================
+
+// Subtle grain/texture layer available to any section that opts in
+.has-grain { position: relative; }
+.has-grain::before {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  opacity: .4;
+  background-image: radial-gradient(rgba(15,26,23,.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+// ---- 4. About Us ----
+.about {
+  &__grid {
+    display: grid;
+    gap: var(--sp-10);
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    @include respond(lg) { grid-template-columns: 1fr 1.05fr; gap: var(--sp-16); }
+
+    > div:last-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  // eyebrow row with a small "Est. 1979" chip (moved off the image)
+  &__meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-3);
+  }
+  &__since {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: var(--r-full);
+    background: var(--c-accent-soft);
+    color: #0A5A8C;
+    font-family: var(--ff-body);
+    font-size: var(--fs-caption);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  // Content rhythm — proper spacing around the heading & paragraphs
+  &__content {
+    .about__meta { margin-bottom: var(--sp-4); }
+    .eyebrow { margin-bottom: 0; }
+    h2 { margin-bottom: var(--sp-5); }
+    .lead { margin-bottom: var(--sp-4); }
+    p + p { margin-top: var(--sp-4); }
+  }
+
+  // Inline CTA (auto width) with the sweep hover from .btn--sweep
+  &__cta {
+    align-self: flex-start;
+    gap: var(--sp-3);
+  }
+
+  &__media {
+    position: relative;
+    border-radius: var(--r-xl);
+
+    @include respond(lg) { height: 100%; min-height: 460px; }
+
+    // premium offset accent frame behind the image
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 20px -20px -20px 20px;
+      border: 2px solid var(--c-accent);
+      border-radius: var(--r-xl);
+      z-index: 0;
+      transition: inset var(--t-base) var(--ease-out), opacity var(--t-base);
+      pointer-events: none;
+    }
+    &:hover::before { inset: 12px -12px -12px 12px; }
+  }
+
+  // framed image — clips the hover zoom, premium border + shadow
+  &__frame {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--c-bg-muted);
+    box-shadow: var(--sh-lg);
+    border: 1px solid var(--c-line);
+    // subtle inner ring for a refined, framed look
+    box-shadow: var(--sh-lg), inset 0 0 0 6px rgba(255, 255, 255, .55);
+
+    @include respond(lg) { aspect-ratio: auto; }
+
+    img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s var(--ease-out), filter var(--t-base);
+    }
+  }
+  &__media:hover &__frame img { transform: scale(1.07); filter: saturate(1.05); }
+
+  // sweeping shine on hover
+  &__shine {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.35) 48%, transparent 62%);
+    transform: translateX(-120%);
+    transition: transform 0.9s var(--ease-out);
+  }
+  &__media:hover &__shine { transform: translateX(120%); }
+
+  // gold corner accent (kept, layered above the frame)
+  &__frame::after {
+    content: "";
+    position: absolute;
+    left: var(--sp-4); bottom: var(--sp-4);
+    z-index: 3;
+    width: 56px; height: 56px;
+    border-left: 3px solid var(--c-accent);
+    border-bottom: 3px solid var(--c-accent);
+    pointer-events: none;
+  }
+
+  &__badge {
+    position: absolute;
+    right: var(--sp-5); top: var(--sp-5);
+    z-index: 4;
+    background: var(--c-bg);
+    border-radius: var(--r-lg);
+    padding: var(--sp-4) var(--sp-5);
+    box-shadow: var(--sh-md);
+    text-align: center;
+    transition: transform var(--t-base) var(--ease-out);
+
+    strong { display: block; font-family: var(--ff-display); font-weight: 800; font-size: 1.8rem; color: var(--c-primary); line-height: 1; }
+    span { font-size: var(--fs-caption); color: var(--c-ink-500); }
+  }
+  &__media:hover &__badge { transform: translateY(-4px); }
+
+  &__stats { margin-top: var(--sp-10); padding-top: var(--sp-8); border-top: 1px solid var(--c-line); }
+}
+
+// ---- 5. Events ----
+.events {
+  // light, airy gradient — neutral into a soft Olympic-blue tint
+  background: linear-gradient(180deg, var(--c-bg-soft) 0%, #EAF2FB 100%);
+}
+
+.events__layout {
+  display: grid;
+  gap: var(--sp-6);
+  grid-template-columns: 1fr;
+  align-items: start;
+
+  @include respond(lg) { grid-template-columns: 1.25fr 1fr; gap: var(--sp-8); }
+}
+.events__list { display: grid; gap: var(--sp-4); }
+
+// Featured "Next Up" event with large countdown
+.event-feature {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  border-radius: var(--r-xl);
+  padding: var(--sp-8) var(--sp-6);
+  color: var(--c-ink-900);
+  // clean near-white panel
+  background: #FEFFFF;
+  border: 1px solid var(--c-line);
+  box-shadow: var(--sh-md);
+
+  @include respond(lg) { padding: var(--sp-12) var(--sp-10); }
+
+  &__body { position: relative; z-index: 2; display: flex; flex-direction: column; gap: var(--sp-6); height: 100%; }
+
+  &__top { display: flex; gap: var(--sp-4); align-items: flex-start; }
+
+  // enlarged logo — sits at the top of the card, centred horizontally
+  &__logo {
+    align-self: center;
+    width: 118px; height: 118px;
+    display: grid; place-items: center;
+    background: none;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+    img { width: 100%; height: 100%; object-fit: contain; }
+  }
+
+  // Green "Next Up" badge on the cream panel
+  .badge--live { background: var(--c-primary); color: #fff; }
+  .badge--live::before { background: #fff; }
+
+  // Green "Official Website" CTA on the cream panel
+  .btn--accent {
+    background: var(--c-primary);
+    color: #fff;
+    &:hover { background: var(--c-primary-dark); color: #fff; box-shadow: var(--sh-lg); }
+  }
+
+  &__title {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+    line-height: 1.15;
+    color: var(--c-ink-900);
+    margin-top: var(--sp-2);
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-4);
+    margin-top: var(--sp-3);
+    font-size: var(--fs-body-sm);
+    color: var(--c-ink-500);
+  }
+
+  // Light countdown tiles to suit the near-white panel
+  &__countdown {
+    margin-top: auto;
+    .countdown__unit { background: #fff; border-color: var(--c-line); backdrop-filter: none; }
+    .countdown__num { color: var(--c-primary); }
+    .countdown__lbl { color: var(--c-ink-500); }
+    .countdown__sep { color: var(--c-ink-300); }
+
+    // MOBILE: let the four units shrink to fit so none is cut off
+    .countdown { gap: var(--sp-1); width: 100%; }
+    .countdown__unit { flex: 1 1 0; min-width: 0; padding: var(--sp-3) var(--sp-1); }
+    .countdown__num { font-size: 1.5rem; }
+    .countdown__sep { margin-top: 0; }
+
+    // TABLET & DESKTOP (unchanged): restore the roomy fixed-width tiles
+    @include respond(md) {
+      .countdown { gap: var(--sp-2); width: auto; }
+      .countdown__unit { flex: 0 0 auto; min-width: 64px; padding: var(--sp-3) var(--sp-2); }
+      .countdown__num { font-size: 1.9rem; }
+      .countdown__sep { margin-top: 4px; }
+    }
+  }
+
+  .btn { align-self: flex-start; }
+
+  // decorative ring — warm gold tint to read on the cream panel
+  .ring-motif { border-color: var(--c-accent-soft); opacity: .8; }
+}
+
+// ---- 6. Featured Athletes ----
+.athletes {
+  position: relative;
+  overflow: hidden;
+
+  &__watermark {
+    position: absolute;
+    top: var(--sp-8);
+    right: calc(var(--gutter) * -1);
+    width: 260px;
+    opacity: .06;
+    pointer-events: none;
+    z-index: 0;
+
+    @include respond(lg) { width: 420px; top: var(--sp-6); }
+  }
+
+  // Wider container so the 5 cards read larger and fill one clean row
+  .container { position: relative; z-index: 1; max-width: var(--container-xl); }
+
+  &__grid {
+    display: grid;
+    gap: var(--sp-5);
+    grid-template-columns: 1fr;                                   // mobile: 1 per row
+
+    @include respond(md) { grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); }
+    @include respond(lg) { grid-template-columns: repeat(5, 1fr); }
+  }
+}
+
+// ---- 7. Latest Activities (premium like News, but distinct look) ----
+.activities {
+  // soft green gradient — sets it apart from the grey News section
+  background: linear-gradient(180deg, #F2F8F4 0%, #E5F1EA 100%);
+
+  // trophy/stopwatch motifs tinted green + gold to match this section
+  .news__deco--tl { color: var(--c-primary); opacity: .07; }
+  .news__deco--br { color: var(--c-accent); opacity: .09; }
+}
+
+// ---- 8. Video highlights (paired with gallery/moments) ----
+.video-feature {
+  display: grid;
+  gap: var(--sp-6);
+  grid-template-columns: 1fr;
+  @include respond(lg) { grid-template-columns: 1.5fr 1fr; }
+}
+.video-feature__side { display: grid; gap: var(--sp-4); align-content: start; }
+
+// ---- International affiliation — distinct light gradient ----
+.affiliation-wrap {
+  background: linear-gradient(135deg, #EFF6F2 0%, #E9F1FB 55%, #F4EEFB 100%);
+}
+.affiliation-wrap .lead { max-width: 60ch; }
+
+// ---- Section decorative olympic-ring watermark ----
+.ring-motif {
+  position: absolute;
+  width: 320px; height: 320px;
+  border: 40px solid var(--c-primary-tint);
+  border-radius: 50%;
+  opacity: .5;
+  pointer-events: none;
+  z-index: 0;
+}
+.ring-motif--tr { top: -120px; right: -120px; }
+.ring-motif--bl { bottom: -140px; left: -140px; border-color: var(--c-accent-soft); }

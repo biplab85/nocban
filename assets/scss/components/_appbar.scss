@@ -1,0 +1,70 @@
+@use "../abstracts" as *;
+// ==========================================================================
+// MOBILE BOTTOM APP BAR — modern, native-app-style quick navigation
+// ==========================================================================
+
+.appbar {
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: var(--z-appbar);
+
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+  width: min(94%, 460px);
+  padding: 7px;
+  padding-bottom: calc(7px + env(safe-area-inset-bottom, 0px));
+
+  border-radius: var(--r-full);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 34px rgba(15, 26, 23, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  // shown on mobile & tablet only
+  @include respond(lg) { display: none; }
+
+  &__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px 2px;
+    border-radius: var(--r-lg);
+    color: var(--c-ink-500);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    -webkit-tap-highlight-color: transparent;
+    transition: color var(--t-fast) var(--ease-standard),
+                background var(--t-fast) var(--ease-standard),
+                transform var(--t-fast) var(--ease-standard);
+
+    svg {
+      width: 23px;
+      height: 23px;
+      transition: transform var(--t-base) var(--ease-out);
+    }
+    span { line-height: 1; }
+
+    &:active { transform: scale(0.9); }
+
+    &.is-active {
+      color: var(--c-primary);
+      background: var(--c-primary-tint);
+      svg { transform: translateY(-1px) scale(1.06); }
+    }
+  }
+}
+
+// keep content clear of the floating bar on mobile/tablet
+@media (max-width: 1023px) {
+  body { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+  // let the footer sit above the bar
+  .footer { padding-bottom: var(--sp-10); }
+}

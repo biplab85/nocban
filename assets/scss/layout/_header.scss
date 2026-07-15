@@ -1,0 +1,241 @@
+@use "../abstracts" as *;
+// ==========================================================================
+// HEADER / NAVBAR + MOBILE APP BAR  —  claude.md §5.3
+// ==========================================================================
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background: var(--c-bg);
+  border-bottom: 1px solid var(--c-line-soft);
+  transition: box-shadow var(--t-base) var(--ease-standard);
+
+  &__inner {
+    @include container(var(--container-xl));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-6);
+    height: 68px;
+
+    @include respond(lg) { height: 84px; }
+  }
+
+  // Deeper shadow once the page scrolls beneath it
+  &.is-scrolled { box-shadow: var(--sh-sm); }
+  &.is-open { box-shadow: var(--sh-sm); }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    font-family: var(--ff-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--c-ink-900);
+
+    img { height: 48px; width: auto; }
+    // The logo image already contains the wordmark, so the text label is hidden.
+    span { display: none; }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+  }
+}
+
+// ---- Desktop nav ----
+.nav {
+  display: none;
+
+  @include respond(xl) {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  &__item { position: relative; }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 12px;
+    font-weight: 500;
+    font-size: var(--fs-body-sm);
+    color: var(--c-ink-700);
+    border-radius: var(--r-sm);
+    white-space: nowrap;
+    transition: color var(--t-fast), background var(--t-fast);
+
+    &:hover, &.is-active { color: var(--c-primary); background: var(--c-primary-tint); }
+  }
+
+  &__chev { transition: transform var(--t-base) var(--ease-standard); }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 250px;
+    padding: var(--sp-2);
+    background: var(--c-bg);
+    border: 1px solid var(--c-line-soft);
+    border-radius: var(--r-md);
+    box-shadow: var(--sh-md);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity var(--t-base), transform var(--t-base), visibility var(--t-base);
+    z-index: var(--z-dropdown);
+
+    &::before { // hover bridge
+      content: ""; position: absolute; top: -10px; left: 0; right: 0; height: 10px;
+    }
+
+    a {
+      padding: 10px 12px;
+      border-radius: var(--r-sm);
+      font-size: var(--fs-body-sm);
+      font-weight: 500;
+      color: var(--c-ink-700);
+      white-space: nowrap;
+      transition: color var(--t-fast), background var(--t-fast);
+      &:hover { background: var(--c-primary-tint); color: var(--c-primary); }
+    }
+
+    &--mega {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      min-width: 540px;
+    }
+  }
+
+  &__item:hover, &__item:focus-within, &__item.is-menu-open {
+    .nav__dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav__chev { transform: rotate(180deg); }
+  }
+}
+
+// ---- Hamburger ----
+.hamburger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px; height: 44px;
+  padding: 10px;
+  border-radius: var(--r-sm);
+
+  span {
+    height: 2px;
+    width: 100%;
+    background: var(--c-ink-900);
+    border-radius: 2px;
+    transition: transform var(--t-base) var(--ease-out), opacity var(--t-fast);
+  }
+
+  @include respond(xl) { display: none; }
+
+  &.is-active {
+    span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+}
+
+// ---- Mobile drawer ----
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  visibility: hidden;
+  pointer-events: none;
+
+  &__backdrop {
+    position: absolute; inset: 0;
+    background: rgba(15, 26, 23, .45);
+    opacity: 0;
+    transition: opacity var(--t-base) var(--ease-standard);
+  }
+
+  &__panel {
+    position: absolute;
+    top: 0; right: 0;
+    height: 100%;
+    width: min(88%, 380px);
+    background: var(--c-bg);
+    box-shadow: var(--sh-lg);
+    padding: calc(68px + var(--sp-4)) var(--sp-5) var(--sp-8);
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform var(--t-base) var(--ease-out);
+  }
+
+  &.is-open {
+    visibility: visible;
+    pointer-events: auto;
+    .drawer__backdrop { opacity: 1; }
+    .drawer__panel { transform: translateX(0); }
+  }
+
+  @include respond(xl) { display: none; }
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    width: 100%;
+    text-align: left;
+    padding: var(--sp-4) var(--sp-2);
+    font-family: var(--ff-heading);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--c-ink-900);
+    border-bottom: 1px solid var(--c-line-soft);
+
+    &:hover, &.is-active { color: var(--c-primary); }
+    .nav__chev { flex-shrink: 0; transition: transform var(--t-base); }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+
+    &.is-open {
+      > .drawer-nav__toggle { color: var(--c-primary); }
+      > .drawer-nav__toggle .nav__chev { transform: rotate(180deg); }
+      .drawer-nav__sub { grid-template-rows: 1fr; }
+    }
+  }
+
+  &__sub {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--t-base) var(--ease-standard);
+    border-bottom: 1px solid var(--c-line-soft);
+  }
+  &__sub-inner { overflow: hidden; min-height: 0; display: flex; flex-direction: column; }
+
+  &__sublink {
+    padding: 12px 10px 12px 20px;
+    font-size: var(--fs-body-sm);
+    font-weight: 500;
+    color: var(--c-ink-500);
+    &:hover { color: var(--c-primary); }
+  }
+
+  &__cta { margin-top: var(--sp-6); }
+}

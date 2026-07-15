@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+// ==========================================================================
+// UTILITIES / HELPERS
+// ==========================================================================
+
+.visually-hidden { @include visually-hidden; }
+.no-scroll { overflow: hidden; }
+
+// Text
+.text-center { text-align: center; }
+.text-primary { color: var(--c-primary); }
+.text-accent { color: var(--c-accent); }
+.text-white { color: #fff; }
+
+// Spacing helpers
+.mt-0 { margin-top: 0; }
+.mt-4 { margin-top: var(--sp-4); }
+.mt-6 { margin-top: var(--sp-6); }
+.mt-8 { margin-top: var(--sp-8); }
+.mb-0 { margin-bottom: 0; }
+
+// Flex/inline
+.inline-flex { display: inline-flex; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-3 { gap: var(--sp-3); }
+.gap-4 { gap: var(--sp-4); }
+.flex-wrap { flex-wrap: wrap; }
+
+// Display
+.hide-mobile { display: none; @include respond(lg) { display: block; } }
+.show-mobile { @include respond(lg) { display: none; } }
+
+// Eyebrow with a leading title-relevant SVG icon
+.eyebrow--icon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+
+  .eyebrow__ic {
+    width: 16px;
+    height: 16px;
+    color: var(--c-accent);
+    flex-shrink: 0;
+  }
+}
+
+// Eyebrow on dark/coloured backgrounds (brighter blue for contrast on green/dark)
+.eyebrow--on-dark {
+  color: var(--c-accent-on-dark);
+  .eyebrow__ic { color: var(--c-accent-on-dark); }
+}
+
+// Centred eyebrow should sit centred as an inline-flex block
+.section__head--center .eyebrow--icon { justify-content: center; }

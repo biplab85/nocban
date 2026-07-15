@@ -1,0 +1,15 @@
+// ==========================================================================
+// ANIMATION HELPERS  —  GSAP toggles these; CSS provides a no-JS fallback
+// ==========================================================================
+
+// Elements flagged for reveal start hidden ONLY when JS is active.
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  will-change: transform, opacity;
+}
+
+// When reduced motion is requested, never hide content.
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] { opacity: 1 !important; transform: none !important; }
+}

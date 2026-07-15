@@ -1,0 +1,174 @@
+@use "../abstracts" as *;
+// ==========================================================================
+// HERO  —  claude.md §5.5
+// ==========================================================================
+
+.hero {
+  position: relative;
+
+  &__slide {
+    position: relative;
+    min-height: calc(100svh - 68px);
+    display: flex;
+    align-items: flex-start;          // content sits in the upper area, above people's faces
+    color: #fff;
+    overflow: hidden;
+
+    @include respond(lg) { min-height: calc(100svh - 84px); }
+
+    // some slides read better with the content anchored to the bottom
+    &--bottom {
+      align-items: flex-end;
+
+      .hero__inner {
+        padding-top: var(--sp-12);
+        padding-bottom: clamp(var(--sp-16), 12vh, var(--sp-24));
+      }
+    }
+
+    // extra breathing room at the top for this specific image
+    &--pushtop .hero__inner {
+      padding-top: clamp(var(--sp-16), 17vh, var(--sp-32));
+    }
+  }
+
+  &__bg {
+    position: absolute; inset: 0;
+    img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); }
+    // darker at the top (where the text sits) + a base scrim; middle stays clearer so faces show
+    &::after {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(15,26,23,.82) 0%, rgba(15,26,23,.5) 26%, rgba(15,26,23,.12) 52%, rgba(15,26,23,.35) 100%),
+        linear-gradient(105deg, rgba(15,26,23,.45) 0%, rgba(15,26,23,.1) 55%, transparent 100%);
+    }
+  }
+
+  &__inner {
+    @include container(var(--container-xl));
+    position: relative;
+    z-index: 2;
+    padding-top: clamp(var(--sp-12), 9vh, var(--sp-20));
+    padding-bottom: var(--sp-16);
+  }
+
+  &__content { max-width: 660px; }
+
+  &__eyebrow {
+    margin-bottom: var(--sp-4);
+  }
+  // override the on-dark accent so hero eyebrow reads white
+  &__eyebrow.eyebrow--on-dark {
+    color: #fff;
+    .eyebrow__ic { color: #fff; }
+  }
+
+  // White "View Activities" button on the hero
+  .btn--accent {
+    background: #fff;
+    color: var(--c-primary);
+    border-color: #fff;
+    &:hover { background: #fff; color: var(--c-primary-dark); box-shadow: var(--sh-lg); }
+  }
+
+  &__title {
+    font-family: var(--ff-display);
+    font-size: clamp(1.9rem, 3.6vw, 3.3rem);   // smaller, more refined
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--sp-6);
+    color: #fff;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, .25);
+    @include clamp-lines(4);                     // never overflow the hero
+
+    em {
+      font-style: normal;
+      color: var(--c-accent-on-dark);
+      position: relative;
+    }
+
+    // blinking caret during the typewriter "write" effect
+    &.is-typing::after {
+      content: "";
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      margin-left: 6px;
+      vertical-align: -0.12em;
+      background: var(--c-accent-on-dark);
+      animation: hero-caret 0.8s steps(1) infinite;
+    }
+
+    // Bengali titles run long — scale them down and give more line height
+    &--bn {
+      font-size: clamp(1.5rem, 2.9vw, 2.5rem);
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 0;
+      @include clamp-lines(3);
+    }
+  }
+
+  &__text {
+    font-size: var(--fs-body-lg);
+    color: rgba(255, 255, 255, .82);
+    max-width: 52ch;
+    margin-bottom: var(--sp-8);
+  }
+
+  &__actions { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
+
+  // Slider controls
+  &__pagination {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: var(--sp-12);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    gap: var(--sp-2);
+  }
+
+  &__scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: var(--sp-12);
+    transform: translateX(-50%);
+    z-index: 3;
+    color: rgba(255, 255, 255, .7);
+    font-size: var(--fs-caption);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: none;
+    @include respond(lg) { display: block; }
+  }
+}
+
+// Hide hero text from the very first frame so it never flashes fully
+// before the reveal animation runs (JS drives it back in).
+.js .hero__eyebrow,
+.js .hero__title,
+.js .hero__actions { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .hero__eyebrow,
+  .js .hero__title,
+  .js .hero__actions { opacity: 1; }
+}
+
+// Swiper pagination bullets (scoped)
+.hero .swiper-pagination-bullet {
+  width: 28px; height: 4px;
+  border-radius: var(--r-full);
+  background: rgba(255, 255, 255, .45);
+  opacity: 1;
+  transition: background var(--t-base), width var(--t-base);
+}
+.hero .swiper-pagination-bullet-active { background: var(--c-accent-on-dark); width: 44px; }
+
+@keyframes hero-caret {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}

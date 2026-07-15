@@ -1,0 +1,29 @@
+// ==========================================================================
+// BASE / GLOBAL
+// ==========================================================================
+
+body {
+  overflow-x: hidden;
+}
+
+// Skip link (a11y)
+.skip-link {
+  position: absolute;
+  left: var(--sp-4);
+  top: -100px;
+  z-index: var(--z-toast);
+  background: var(--c-primary);
+  color: #fff;
+  padding: var(--sp-3) var(--sp-5);
+  border-radius: var(--r-sm);
+  transition: top var(--t-base) var(--ease-out);
+
+  &:focus { top: var(--sp-4); }
+}
+
+img { object-fit: cover; }
+
+// Reduced motion: pause marquee/autoplay-style animations
+@media (prefers-reduced-motion: reduce) {
+  .news-strip__track { animation: none !important; }
+}

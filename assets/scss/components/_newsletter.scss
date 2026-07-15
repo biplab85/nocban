@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+// ==========================================================================
+// NEWSLETTER CTA BAND
+// ==========================================================================
+
+.newsletter {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(0,129,200,.16), transparent 60%),
+    var(--c-bg-invert);
+  color: #fff;
+  border-radius: var(--r-xl);
+  padding: var(--sp-12) var(--sp-6);
+  text-align: center;
+
+  @include respond(lg) { padding: var(--sp-16); }
+
+  &__inner { position: relative; z-index: 2; max-width: 620px; margin-inline: auto; }
+  h2, p { color: #fff; }
+  p { color: rgba(255,255,255,.72); margin-top: var(--sp-3); }
+  .subscribe { margin-top: var(--sp-8); }
+  &__note { margin-top: var(--sp-6); font-size: var(--fs-caption); color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  &__editions {
+    margin-top: var(--sp-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    a { color: rgba(255,255,255,.82); font-size: var(--fs-body-sm); }
+    a:hover { color: var(--c-accent-on-dark); }
+  }
+}

@@ -1,0 +1,53 @@
+// ==========================================================================
+// NOCBAN — main.scss  (7-1 architecture, mobile-first)
+// See claude.md §9.2
+// ==========================================================================
+@charset "UTF-8";
+
+// 1. Abstracts (no CSS output except :root tokens)
+@use "abstracts/functions" as *;
+@use "abstracts/breakpoints" as *;
+@use "abstracts/mixins" as *;
+@forward "abstracts/tokens";
+
+// 2. Base
+@use "base/reset";
+@use "base/fonts";
+@use "base/typography";
+@use "base/base";
+
+// 3. Layout
+@use "layout/container";
+@use "layout/grid";
+@use "layout/header";
+@use "layout/footer";
+
+// 4. Components
+@use "components/buttons";
+@use "components/badge";
+@use "components/cards";
+@use "components/news-card";
+@use "components/countdown";
+@use "components/hero";
+@use "components/news-strip";
+@use "components/stats";
+@use "components/forms";
+@use "components/gallery";
+@use "components/partners";
+@use "components/social";
+@use "components/slider";
+@use "components/connect";
+@use "components/newsletter";
+@use "components/engage";
+@use "components/appbar";
+
+// 5. Pages
+@use "pages/home";
+
+// 6. Utilities
+@use "utilities/helpers";
+@use "utilities/animation";
+
+// 7. Vendors
+@use "vendors/swiper";
+@use "vendors/fancybox";
