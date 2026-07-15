@@ -172,10 +172,46 @@
     width: min(88%, 380px);
     background: var(--c-bg);
     box-shadow: var(--sh-lg);
-    padding: calc(68px + var(--sp-4)) var(--sp-5) var(--sp-8);
+    padding: var(--sp-4) var(--sp-5) var(--sp-8);
     overflow-y: auto;
     transform: translateX(100%);
     transition: transform var(--t-base) var(--ease-out);
+  }
+
+  // Panel top bar: brand logo + close button (mobile drawer only)
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    margin: 0 calc(var(--sp-2) * -1) var(--sp-4);
+    padding: 0 var(--sp-2) var(--sp-4);
+    border-bottom: 1px solid var(--c-line-soft);
+  }
+
+  &__logo img {
+    display: block;
+    height: 42px;
+    width: auto;
+  }
+
+  &__close {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--r-full);
+    color: var(--c-ink-700);
+    background: var(--c-bg-muted);
+    -webkit-tap-highlight-color: transparent;
+    transition: color var(--t-fast) var(--ease-standard),
+                background var(--t-fast) var(--ease-standard),
+                transform var(--t-fast) var(--ease-standard);
+
+    &:hover { color: var(--c-primary); background: var(--c-primary-tint); }
+    &:active { transform: scale(0.92); }
   }
 
   &.is-open {

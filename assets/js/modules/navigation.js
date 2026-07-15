@@ -36,6 +36,7 @@ export function initNavigation() {
   // Bottom app-bar "Menu" opens the full drawer
   qs('.appbar__menu')?.addEventListener('click', () => setDrawer(true));
   qs('.drawer__backdrop', drawer || document)?.addEventListener('click', () => setDrawer(false));
+  qs('.drawer__close', drawer || document)?.addEventListener('click', () => setDrawer(false));
 
   // Close the drawer only when an actual navigation link is tapped (not a submenu toggle)
   qsa('a.drawer-nav__link, .drawer-nav__sublink', drawer || document).forEach((a) =>

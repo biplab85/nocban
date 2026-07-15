@@ -5,4 +5,5 @@ dist/
 Thumbs.db
 assets/css/*.map
 .playwright-mcp/
-nocban-loaded.png
+nocban-*.png
+.devserver.py
